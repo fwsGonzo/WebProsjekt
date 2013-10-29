@@ -1,0 +1,101 @@
+/* test.css */
+
+body
+{
+	background-color: black;
+	background-image: url("bg1.png");
+	background-repeat: repeat-y;
+	margin: 2%;
+	
+	/* default text color */
+	color: #363636;
+}
+
+.coolframe
+{
+	background-color: black;
+	overflow-x: auto;
+	overflow-y: auto;
+	
+	margin: 2%;
+	
+	border-style: double inset;
+	border-width: 5px;
+	border-color: #222222;
+	border-radius: 2px;
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+#hovedside
+{
+	/* Hoved dokument */
+	width:  80%;
+	height: 80%;
+	margin: auto auto;
+	background-color: #111111;
+	
+	/* Border rundt side */
+	border-width: 10px;
+	border-style: double groove;
+	border-radius: 30px;
+	
+	border-left-color: #00AA00;
+	border-right-color: #00AA00;
+	
+	border-top-width: 5px;
+	border-bottom-width: 5px;
+}
+
+h1, h2, h3
+{
+	/* Overskrifter */
+	font-family: monospace;
+	color: #5555CC;
+}
+
+p
+{
+	/* Tekst paragrafer */
+	font-family: monospace;
+	color: #5555CC;
+}
+
+#menuframe
+{
+	/* Navigasjons linker */
+	margin: 2%;
+}
+
+a
+{
+	color: #4444DD;
+}
+a:hover
+{
+	color: #8888CC;
+}
+a:visited,a:active
+{
+	color: #111188;
+}
+
+table, th, td
+{
+	border: 1px solid #151515;
+}
+
+#subframe
+{
+	/* float:  left; */
+	padding: 2%;
+}
+
+.inparagraph
+{
+	/* Tekst-formatering osv. */
+	margin: 10px;
+	color: #4444AA;
+	padding-left: 10px;
+}
+
