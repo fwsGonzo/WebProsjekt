@@ -1,13 +1,12 @@
-<?php
+
 	<div id="leftSection">
-		include 'CodeClicker.html';
+		<?php include 'keyboard.php'; ?>
 	</div>
 
 	<div id="middleSection">
-		include 'Stats.html';
+		<?php include 'stats.php'; ?>
 	</div>
 
 	<div id="rightSection">
-		include 'Upgrades.html';
+		<?php include 'upgrades.php'; ?>
 	</div>
-?>
