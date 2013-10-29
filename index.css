@@ -101,23 +101,42 @@ table, th, td
 
 #leftSection, #middleSection, #rightSection
 {
+	position: relative;
+	float: left;
 	display: inline;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
+/*Below is the leftsection*/
 #leftSection
 {
 	width: 30%;
 }
+/*End of leftsection*/
 
+/*Below is the middlesection*/
 #middleSection
 {
-	left: 30%;
 	width: 40%;
 }
+/*End of middlesection*/
 
+/*Below is the rightsection*/
 #rightSection
 {
-	right: 0px;
 	width: 30%;
 }
+
+
+
+.icon
+{
+	height: 64px;
+	width: 64px;
+}
+
+.icon img
+{
+	width: 100%;
+}
+/*End of rightsection*/
