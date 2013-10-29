@@ -99,3 +99,25 @@ table, th, td
 	padding-left: 10px;
 }
 
+#leftSection, #middleSection, #rightSection
+{
+	display: inline;
+	overflow: hidden;
+}
+
+#leftSection
+{
+	width: 30%;
+}
+
+#middleSection
+{
+	left: 30%;
+	width: 40%;
+}
+
+#rightSection
+{
+	right: 0px;
+	width: 30%;
+}
