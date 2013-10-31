@@ -1,0 +1,12 @@
+/**
+ * Resumes or starts a new game
+ * 
+ * 
+**/
+
+$(document).ready( function()
+{
+	initKeyboard();
+	
+});
+

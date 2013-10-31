@@ -1,12 +1,13 @@
 
-	<div id="leftSection">
+	<section id="leftSection">
 		<?php include 'keyboard.php'; ?>
-	</div>
+	</section>
 
-	<div id="middleSection">
+	<section id="middleSection">
 		<?php include 'stats.php'; ?>
-	</div>
+	</section>
 
-	<div id="rightSection">
+	<section id="rightSection">
 		<?php include 'upgrades.php'; ?>
-	</div>
+	</section>
+

@@ -17,7 +17,7 @@ $('#keyboard').mouseup( function()
 
 function initKeyboard()
 {
-	updateKeyboard();
+	
 }
 
 function updateKeyboard()
