@@ -6,7 +6,13 @@
 
 $(document).ready( function()
 {
+	// the keyboard we click on to gain codelines manually
+	// from keyboard.js:
 	initKeyboard();
+	
+	// upgrades manager
+	// from upgrades.js:
+	initUpgrades();
 	
 });
 

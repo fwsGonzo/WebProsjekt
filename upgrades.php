@@ -1,5 +1,5 @@
 ﻿<?php
-	
+	/*
 	for($i=0; $i<10; $i++)
 	{
 		echo "<div class=\"updatesOption\">";
@@ -15,4 +15,8 @@
 			//echo "haha";
 		echo "</div>";
 	}
+	*/
 ?>
+<script src="upgrades.js" type="text/javascript">
+</script>
+
