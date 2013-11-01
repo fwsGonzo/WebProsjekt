@@ -82,9 +82,21 @@ function createUpgradeList()
 {
 	for(var i = 0; i < upgrades.length; i++)
 	{
-		// create HTML element
+		// create DIV element for a single upgrade
+		var $upg = $('<div>',
+		{
+			'class': 'upgradeDiv'
+			//'id'   : 'upgradeDiv' + i
+			
+		}).appendTo('#rightSection');
 		
-		// insert into document
-		console.log(upgrades[i].name);
+		// add caption
+		$('<p>',
+		{
+			'class' : 'upgradeCaption'
+			//id : 'upgradeCaption' + i
+			
+		}).text(upgrades[i].name).appendTo($upg);
 	}
 }
+
