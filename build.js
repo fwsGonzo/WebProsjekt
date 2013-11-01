@@ -4,57 +4,61 @@
  * 
 **/
 
-var cps = 0;
+function CPS()
+{
+	this.cps = 0;
+	
+	this.getCPS = function()
+	{
+		return this.cps;
+	}
+	this.calculate = function()
+	{
+		// calculate cps from scratch, avoiding desynchs and bugs
+		this.cps = 0;
+		for(var i = 0; i < upgrades.length; i++)
+		{
+			this.cps += upgrades[i].count * upgrades[i].cps;
+		}
+	}
+	this.start = function()
+	{
+		var interval = 500;
+		
+		// automatic cps updates
+		setInterval( function()
+		{
+			// cps is measured in seconds, so we need to convert it to interval
+			addCodelines(this.cps * (interval / 1000));
+			
+		}, interval);
+	}
+}
+var cps = new CPS();
 
 function createBuildFunctions()
 {
 	$(".upgradeDiv").click( function()
 	{
-		// FIXME check that the upgrade is is cost range
-		
 		// user wants to purchase an upgrade (clicked)
 		// find which upgrade it is
 		var id = Number(this.getAttribute("number"));
 		
-		// FIXME subtract cost from codelines
+		// find upgrade object, and calculate cost
 		var upg = upgrades[id];
 		var cost = upg.getCost();
 		
+		// check that the upgrade is is cost range
+		var cl = getCodelines();
+		if (cl < cost) return;
+		// subtract cost
+		setCodelines(cl-cost);
+		
 		// add upgrade
-		upg.upgrade();
+		upg.upgrade(id);
 		
 		// update numbers to reflect change
 		updateKeyboard();
-		
-		// update text
-		$("#upgradeCaption" + id).text(
-			upg.name + " " + upg.count + "  cost: " + upg.getCost()
-		);
 	});
-}
-
-function calculateCPS()
-{
-	// calculate cps from scratch, avoiding desynchs and bugs
-	cps = 0;
-	
-	for(var i = 0; i < upgrades.length; i++)
-	{
-		cps += upgrades[i].count * upgrades[i].cps;
-	}
-}
-
-function startCPS()
-{
-	var interval = 500;
-	
-	// automatic cps updates
-	setInterval( function()
-	{
-		codelines += cps;
-		// cps is measured in seconds, so we need to convert it to interval
-		addCodelines(cps * (interval / 1000));
-		
-	}, interval);
 }
 

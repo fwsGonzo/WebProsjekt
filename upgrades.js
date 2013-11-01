@@ -10,9 +10,16 @@ var COST_MULTIPLIER = 1.2;
 
 function Upgrade(name, desc, cost, cps)
 {
+	// attributes
 	this.name = name;
 	this.desc = desc;
 	this.cost = cost;
+	// visible if we have unlocked this upgrade
+	this.visible = false;
+	// enabled if we can afford this upgrade
+	this.enabled = false;
+	// corresponding HTML element
+	this.id = 0;
 	// the amount of codelines per second this upgrade
 	// constantly gives
 	this.cps  = cps;
@@ -26,6 +33,36 @@ function Upgrade(name, desc, cost, cps)
 	this.upgrade = function()
 	{
 		this.count += 1;
+		
+		// if the next upgrade in our list is disabled,
+		// enable it
+		if (this.id+1 < upgrades.length)
+		{
+			upgrades[this.id+1].show(true);
+		}
+		
+		this.updateText();
+	}
+	this.show = function(toggle)
+	{
+		this.visible = toggle;
+		if (toggle)
+		{
+			$("#upgradeDiv" + this.id).show();
+		}
+		else $("#upgradeDiv" + this.id).hide();
+	}
+	this.enable = function(toggle)
+	{
+		this.enabled = toggle;
+		// FIXME
+	}
+	this.updateText = function()
+	{
+		// text: name [count]  cost: [cost]
+		$("#upgradeCaption" + this.id).text(
+			this.name + " " + this.count + "  cost: " + this.getCost()
+		);
 	}
 }
 
@@ -40,7 +77,7 @@ function initUpgrades()
 	createUpgrade(
 		"Programming", 
 		"Learn to program! There can be no code lines without programming.", 
-		5, 0.25);
+		5, 1);
 	createUpgrade(
 		"Comment Standard", 
 		"Name, Date, Original Author, Purpose, Intent, ...", 
@@ -93,6 +130,9 @@ function createUpgradeList()
 	
 	for(var i = 0; i < upgrades.length; i++)
 	{
+		upgrades[i].id = i;
+		upgrades[i].visible = visible;
+		
 		// create DIV element for a single upgrade
 		var $upg = $('<div>',
 		{
@@ -109,7 +149,7 @@ function createUpgradeList()
 			id   : 'upgradeCaption' + i,
 			number: i
 			
-		}).text(upgrades[i].name).appendTo($upg);
+		}).appendTo($upg);
 		
 		// hide all upgrades that aren't discovered yet
 		if (!visible) $($upg).hide();
@@ -120,6 +160,8 @@ function createUpgradeList()
 		{
 			// FIXME disable upgrade
 		}
+		
+		upgrades[i].updateText();
 	}
 	
 	// we can't just create the upgrade event at ready(),
