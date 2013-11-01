@@ -19,4 +19,6 @@
 ?>
 <script src="upgrades.js" type="text/javascript">
 </script>
+<script src="build.js" type="text/javascript">
+</script>
 

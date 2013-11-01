@@ -8,22 +8,30 @@ var upgrades = [];
 
 var COST_MULTIPLIER = 1.2;
 
-function Upgrade(name, desc, cost)
+function Upgrade(name, desc, cost, cps)
 {
 	this.name = name;
 	this.desc = desc;
 	this.cost = cost;
+	// the amount of codelines per second this upgrade
+	// constantly gives
+	this.cps  = cps;
+	// the amount we have purchased of this upgrade
 	this.count = 0;
 	
 	this.getCost = function()
 	{
-		return this.cost * Math.pow(this.count + 1, COST_MULTIPLIER);
+		return Math.round(this.cost * Math.pow(this.count + 1, COST_MULTIPLIER));
+	}
+	this.upgrade = function()
+	{
+		this.count += 1;
 	}
 }
 
-function createUpgrade(name, desc, cost)
+function createUpgrade(name, desc, cost, cps)
 {
-	var upg = new Upgrade(name, desc, cost);
+	var upg = new Upgrade(name, desc, cost, cps);
 	upgrades.push(upg);
 }
 
@@ -32,39 +40,39 @@ function initUpgrades()
 	createUpgrade(
 		"Programming", 
 		"Learn to program! There can be no code lines without programming.", 
-		5);
+		5, 0.25);
 	createUpgrade(
 		"Comment Standard", 
 		"Name, Date, Original Author, Purpose, Intent, ...", 
-		50);
+		50, 10);
 	createUpgrade(
 		"Student Programmer", 
 		"Slowly bloats the codebase by reinventing the wheel and using complex solutions to simple problems.", 
-		500);
+		500, 50);
 	createUpgrade(
 		"Moving Deadline", 
 		"Your programming team now has to write code twice as fast, making sure that refactoring and problem space reduction never happens.", 
-		5000);
+		5000, 500);
 	createUpgrade(
 		"Optimize planning",
 		"",
-		50000);
+		50000, 2000);
 	createUpgrade(
 		"Feature creep",
 		"",
-		500000);
+		500000, 10000);
 	createUpgrade(
 		"Assembly",
 		"",
-		5000000);
+		5000000, 50000);
 	createUpgrade(
 		"Reduce redundancies",
 		"",
-		50000000);
+		50000000, 120000);
 	createUpgrade(
 		"Government Project",
 		"",
-		550000000);
+		550000000, 1500000);
 	
 	// resume (any) stored data
 	resumeUpgrades();
@@ -89,7 +97,8 @@ function createUpgradeList()
 		var $upg = $('<div>',
 		{
 			class: 'upgradeDiv',
-			id   : 'upgradeDiv' + i
+			id   : 'upgradeDiv' + i,
+			number: i
 			
 		}).appendTo('#rightSection');
 		
@@ -97,7 +106,8 @@ function createUpgradeList()
 		$('<p>',
 		{
 			class: 'upgradeCaption',
-			id   : 'upgradeCaption' + i
+			id   : 'upgradeCaption' + i,
+			number: i
 			
 		}).text(upgrades[i].name).appendTo($upg);
 		
@@ -111,5 +121,10 @@ function createUpgradeList()
 			// FIXME disable upgrade
 		}
 	}
+	
+	// we can't just create the upgrade event at ready(),
+	// we need to explicitly create it after we have created all the elements
+	createBuildFunctions();
+	
 }
 
