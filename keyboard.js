@@ -22,7 +22,7 @@ function initKeyboard()
 
 function updateKeyboard()
 {
-	var cl = Number(localStorage.codelines) || 0;
+	var cl = getCodelines();
 	$('#codelines').text(cl);
 }
 
@@ -32,5 +32,10 @@ function addCodeline()
 	
 	localStorage.codelines = cl;
 	$('#codelines').text(cl);
+}
+
+function getCodelines()
+{
+	return Number(localStorage.codelines) || 0;
 }
 

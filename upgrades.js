@@ -17,7 +17,7 @@ function Upgrade(name, desc, cost)
 	
 	this.getCost = function()
 	{
-		return this.cost * pow(this.count + 1, COST_MULTIPLIER);
+		return this.cost * Math.pow(this.count + 1, COST_MULTIPLIER);
 	}
 }
 
@@ -80,23 +80,36 @@ function resumeUpgrades()
 
 function createUpgradeList()
 {
+	var enabled = true;
+	var visible = true;
+	
 	for(var i = 0; i < upgrades.length; i++)
 	{
 		// create DIV element for a single upgrade
 		var $upg = $('<div>',
 		{
-			'class': 'upgradeDiv'
-			//'id'   : 'upgradeDiv' + i
+			class: 'upgradeDiv',
+			id   : 'upgradeDiv' + i
 			
 		}).appendTo('#rightSection');
 		
 		// add caption
 		$('<p>',
 		{
-			'class' : 'upgradeCaption'
-			//id : 'upgradeCaption' + i
+			class: 'upgradeCaption',
+			id   : 'upgradeCaption' + i
 			
 		}).text(upgrades[i].name).appendTo($upg);
+		
+		// hide all upgrades that aren't discovered yet
+		if (!visible) $($upg).hide();
+		visible = false;
+		
+		// disable all upgrades we can't afford
+		if (upgrades[i].getCost() > getCodelines())
+		{
+			// FIXME disable upgrade
+		}
 	}
 }
 
