@@ -28,7 +28,7 @@ function Upgrade(name, desc, cost, cps)
 	
 	this.getCost = function()
 	{
-		return this.cost + Math.round(this.cost * Math.pow(COST_MULTIPLIER, this.count));
+		return Math.round(this.cost * (1 + Math.pow(COST_MULTIPLIER, this.count)));
 	}
 	this.upgrade = function()
 	{
@@ -61,7 +61,7 @@ function Upgrade(name, desc, cost, cps)
 	{
 		// text: name [count]  cost: [cost]
 		$("#upgradeCaption" + this.id).text(
-			this.name + " " + this.count + "  cost: " + this.getCost()
+			this.name + " " + this.count + "  cost: " + formattedNumber(this.getCost())
 		);
 	}
 }
