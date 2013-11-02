@@ -4,13 +4,11 @@
 **/
 
 var mouseDown = false;
-var clickPower = 1;
 
 $('#keyboard').mousedown( function()
 {
 	mouseDown = true;
-	// FIXME assumes normal clicking power
-	keyboardClick(1.0);
+	keyboardClick();
 });
 $('#keyboard').mouseup( function()
 {
@@ -19,11 +17,7 @@ $('#keyboard').mouseup( function()
 
 function initKeyboard()
 {
-	// 
 	updateKeyboard();
-	
-	// start automatic CPS timer
-	cps.start();
 }
 
 function updateKeyboard()
@@ -31,16 +25,18 @@ function updateKeyboard()
 	// total accumulated codelines
 	var cl = getCodelines();
 	$('#codelines').text(formattedNumber(Math.round(cl)));
-	
+}
+function updateCPS()
+{
 	// codelines per second
-	cps.calculate();
-	$('#cps').text(formattedNumber(Math.round(cps.getCPS() * 100) / 100));
+	var c = cps.calculate();
+	$('#cps').text(formattedNumber(Math.round(c * 100) / 100));
 }
 
 // adds codelines based on factor of clicking power
-function keyboardClick(factor)
+function keyboardClick()
 {
-	var power = clickPower * factor;
+	var power = getClickPower();
 	var cl = Number(localStorage.codelines) + power || power;
 	setCodelines(cl);
 }

@@ -14,5 +14,8 @@ $(document).ready( function()
 	// from upgrades.js:
 	initUpgrades();
 	
+	// start automatic CPS timer
+	cps.start();
+	updateCPS();
 });
 

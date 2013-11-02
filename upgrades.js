@@ -28,7 +28,7 @@ function Upgrade(name, desc, cost, cps)
 	
 	this.getCost = function()
 	{
-		return Math.round(this.cost * Math.pow(this.count + 1, COST_MULTIPLIER));
+		return this.cost + Math.round(this.cost * Math.pow(COST_MULTIPLIER, this.count));
 	}
 	this.upgrade = function()
 	{
@@ -152,6 +152,7 @@ function createUpgradeList()
 		}).appendTo($upg);
 		
 		// hide all upgrades that aren't discovered yet
+		// FIXME
 		if (!visible) $($upg).hide();
 		visible = false;
 		

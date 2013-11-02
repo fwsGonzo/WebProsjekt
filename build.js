@@ -4,9 +4,9 @@
  * 
 **/
 
-function CPS()
+function CPS(newCPS)
 {
-	this.cps = 0;
+	this.cps = Number(newCPS);
 	
 	this.getCPS = function()
 	{
@@ -15,26 +15,31 @@ function CPS()
 	this.calculate = function()
 	{
 		// calculate cps from scratch, avoiding desynchs and bugs
-		this.cps = 0;
+		var c = 0;
 		for(var i = 0; i < upgrades.length; i++)
 		{
-			this.cps += upgrades[i].count * upgrades[i].cps;
+			c += upgrades[i].count * upgrades[i].cps;
 		}
+		this.cps = c;
+		return this.cps;
 	}
 	this.start = function()
 	{
-		var interval = 500;
+		var interval = 50;
 		
 		// automatic cps updates
 		setInterval( function()
 		{
+			// NOTE: setInterval is not run as member function,
+			// so we (unfortunately) have to explicitly access 'cps'
+			
 			// cps is measured in seconds, so we need to convert it to interval
-			addCodelines(this.cps * (interval / 1000));
+			addCodelines(cps.getCPS() * (interval / 1000));
 			
 		}, interval);
 	}
 }
-var cps = new CPS();
+var cps = new CPS(0);
 
 function createBuildFunctions()
 {
@@ -59,6 +64,7 @@ function createBuildFunctions()
 		
 		// update numbers to reflect change
 		updateKeyboard();
+		updateCPS();
 	});
 }
 
