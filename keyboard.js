@@ -25,6 +25,10 @@ function updateKeyboard()
 	// total accumulated codelines
 	var cl = getCodelines();
 	$('#codelines').text(formattedNumber(Math.round(cl)));
+	
+	// if the cps has changed, the clicking power has changed too
+	// clicking power
+	$('#clickpower').text(formattedNumber(Math.round(getClickPower())));	
 }
 function updateCPS()
 {
@@ -59,7 +63,7 @@ function setCodelines(cl)
 
 function getClickPower()
 {
-	return 1 + cps.getCPS() * 0.1;
+	return 1 + cps.getCPS() * 0.15;
 }
 
 // from http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
