@@ -16,25 +16,13 @@
 	{
 	case 0:
 	case 1:
-		$title = "Alf's hjemmeside";
+		$title = "Codelines Writer";
 		$page  = 'page-main.php';
 		break;
-	case 2:
-		$title = "Om meg";
-		$page  = 'page-about.php';
-		break;
-	case 3:
-		$title = "Prosjekter";
-		$page  = 'page-projects.php';
-		break;
-	case 4:
-		$title = "Test";
-		$page  = 'page-test.php';
-		break;
+	
 	default:
-		header('HTTP/1.0 404 Not Found');
-		$title = "Siden finnes ikke";
-		$page  = 'page-404.php';
+		$title = "Codelines Writer";
+		$page  = 'page-main.php';
 		break;
 	}
 	

@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
 	<meta charset=utf-8>
 	<meta name="description" content="Codelines Webapp">
 	<meta name="keywords" content="clicker game">
-	<meta name="author" content="Gruppe XXX">
+	<meta name="author" content="Gruppe 7">
 	
 	<title>
 		<?php
@@ -20,8 +20,6 @@
 	
 	<link rel="shortcut icon" href="favicon.ico" />
 	<link rel="stylesheet" id="stylesheet" title="Black" href="index.css" />
-	<link rel="alternate stylesheet" title="Gray" href="index2.css" />
-	<link rel="alternate stylesheet" title="White" href="index3.css" />
 	
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript">
 	</script>
@@ -36,7 +34,6 @@
 			</h1>
 		</header>
 		
-		<?php include 'menu.php'; ?>
 		
 		<article id="subframe" class="coolframe">
 		
