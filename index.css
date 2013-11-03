@@ -61,12 +61,6 @@ p
 	color: #5555CC;
 }
 
-#menuframe
-{
-	/* Navigasjons linker */
-	margin: 2%;
-}
-
 a
 {
 	color: #4444DD;
@@ -78,11 +72,6 @@ a:hover
 a:visited,a:active
 {
 	color: #111188;
-}
-
-table, th, td
-{
-	border: 1px solid #151515;
 }
 
 #subframe
@@ -97,6 +86,7 @@ table, th, td
 	margin: 10px;
 	color: #4444AA;
 	padding-left: 10px;
+        text-align: center;
 }
 
 #leftSection, #middleSection, #rightSection
@@ -111,6 +101,12 @@ table, th, td
 #leftSection
 {
 	width: 30%;
+        font-size: 16px;
+}
+
+#codelines, #cps
+{
+    color: aqua;
 }
 /*End of leftsection*/
 
@@ -127,21 +123,6 @@ table, th, td
 	width: 30%;
 }
 
-
-
-.icon
-{
-	height: 64px;
-	width: 64px;
-}
-
-.icon img
-{
-	width: 100%;
-}
-/*End of rightsection*/
-
-
 .upgradeDiv
 {
     border: 2px solid green;
@@ -155,8 +136,4 @@ table, th, td
     color: red;
     padding-left: 5px;
 }
-
-#codelines, #cps
-{
-    color: aqua;
-}
+/*End of rightsection*/

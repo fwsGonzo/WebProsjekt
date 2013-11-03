@@ -18,7 +18,6 @@
 		?>
 	</title>
 	
-	<link rel="shortcut icon" href="favicon.ico" />
 	<link rel="stylesheet" id="stylesheet" title="Black" href="index.css" />
 	
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript">
