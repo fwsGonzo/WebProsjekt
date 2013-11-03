@@ -31,10 +31,6 @@ function updateCPS()
 	// codelines per second
 	var c = cps.calculate();
 	$('#cps').text(formattedNumber(Math.round(c * 100) / 100));
-	
-	// if the cps has changed, the clicking power has changed too
-	// clicking power
-	$('#clickpower').text(formattedNumber(Math.round(getClickPower())));
 }
 
 // adds codelines based on factor of clicking power
@@ -63,7 +59,7 @@ function setCodelines(cl)
 
 function getClickPower()
 {
-	return 1 + cps.getCPS() * 0.2;
+	return 1 + cps.getCPS() * 0.1;
 }
 
 // from http://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
