@@ -1,11 +1,8 @@
-/* test.css */
+/* index.css */
 
 body
 {
-	background-color: black;
-	background-image: url("bg1.png");
-	background-repeat: repeat-y;
-	margin: 2%;
+	background-color: white;
 	
 	/* default text color */
 	color: #363636;
@@ -16,35 +13,6 @@ body
 	background-color: black;
 	overflow-x: auto;
 	overflow-y: auto;
-	
-	margin: 2%;
-	
-	border-style: double inset;
-	border-width: 5px;
-	border-color: #222222;
-	border-radius: 2px;
-	border-top-left-radius: 20px;
-	border-bottom-right-radius: 20px;
-}
-
-#hovedside
-{
-	/* Hoved dokument */
-	width:  80%;
-	height: 80%;
-	margin: auto auto;
-	background-color: #111111;
-	
-	/* Border rundt side */
-	border-width: 10px;
-	border-style: double groove;
-	border-radius: 30px;
-	
-	border-left-color: #00AA00;
-	border-right-color: #00AA00;
-	
-	border-top-width: 5px;
-	border-bottom-width: 5px;
 }
 
 h1, h2, h3
@@ -61,31 +29,18 @@ p
 	color: #5555CC;
 }
 
-a
-{
-	color: #4444DD;
-}
-a:hover
-{
-	color: #8888CC;
-}
-a:visited,a:active
-{
-	color: #111188;
-}
-
 #subframe
 {
 	/* float:  left; */
 	padding: 2%;
+        width:96%;
+        height:100%;
 }
 
 .inparagraph
 {
 	/* Tekst-formatering osv. */
-	margin: 10px;
 	color: #4444AA;
-	padding-left: 10px;
         text-align: center;
 }
 
@@ -93,39 +48,52 @@ a:visited,a:active
 {
 	position: relative;
 	float: left;
-	display: inline;
+	display: inline-block;
+        height: 100%;
 	/*overflow: hidden;*/
 }
 
 /*Below is the leftsection*/
 #leftSection
 {
-	width: 30%;
+	width: 40%;
         font-size: 16px;
+        border-right: 3px solid blue;
+       
 }
 
-#codelines, #cps
+#codelines, #cps, #clickpower
 {
     color: aqua;
 }
 /*End of leftsection*/
 
+
+
 /*Below is the middlesection*/
 #middleSection
 {
-	width: 40%;
+	width: 20%;
+        border-right: 3px solid blue;
+        border-left: 3px dotted red;
+        background-color: white;
 }
 /*End of middlesection*/
+
+
 
 /*Below is the rightsection*/
 #rightSection
 {
-	width: 30%;
+	width: 40%;
+        rigth: 1%;
+        margin-right: 0px;
 }
 
 .upgradeDiv
 {
-    border: 2px solid green;
+    /*background-color: gray;*/
+    border: 3px groove green;
     border-radius: 15px;
     margin-top: 3px;
 }
@@ -137,3 +105,11 @@ a:visited,a:active
     padding-left: 5px;
 }
 /*End of rightsection*/
+
+
+/* Stats */ 
+#statsTitle
+{
+    font-size: 20px;
+    font-weight: bold;
+}

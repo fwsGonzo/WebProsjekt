@@ -7,10 +7,35 @@
 	FIXME static background image
 -->
 </canvas>
+<div id="codelinesBox">
+    <p>Codelines: <pre id="codelines">0</pre></p>
+</div>
+<div id="cspBox">
+    <p>cps:       <pre id="cps">0</pre></p>
+</div>
+<div id="clickpowerBox">
+    <p>clickpower:<pre id="clickpower">0</pre></p>
+</div>
 
-<p>Codelines: <pre id="codelines">0</pre></p>
-<p>cps:       <pre id="cps">0</pre></p>
-<p>clickpower:<pre id="clickpower">0</pre></p>
+
+<script>
+$(document).ready(function(){
+    $("#keyboard").mousedown(function(){
+        var marginTop = parseInt($(this).css("margin-top"));
+        var marginLeft = parseInt($(this).css("margin-left"));
+        marginTop = marginTop + 3;
+        marginLeft = marginLeft + 3;
+            $(this).css("margin-top", marginTop + "px").css("margin-left", marginLeft + "px");
+
+    }).mouseup(function(){
+        var marginTop = parseInt($(this).css("margin-top"));
+        var marginLeft = parseInt($(this).css("margin-left"));
+        marginTop = marginTop - 3;
+        marginLeft= marginLeft - 3;
+            $(this).css("margin-top", marginTop + "px").css("margin-left", marginLeft + "px");
+    }); 
+});
+</script>
 
 <img id="keyboard" src="keyboard.png" alt="~ Keyboard ~" />
 
