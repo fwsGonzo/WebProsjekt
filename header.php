@@ -28,9 +28,9 @@
 	<section id="hovedside">
 		
 		<header class="inparagraph">
-			<h1 id="title">
+		<!--	<h1 id="title">
 				<?php echo "$title"; ?>
-			</h1>
+			</h1> -->
 		</header>
 		
 		

@@ -33,7 +33,7 @@ $(document).ready(function(){
         marginTop = marginTop - 3;
         marginLeft= marginLeft - 3;
             $(this).css("margin-top", marginTop + "px").css("margin-left", marginLeft + "px");
-    }); 
+    });
 });
 </script>
 
@@ -43,4 +43,3 @@ $(document).ready(function(){
 </script>
 <script src="keyboard.js" type="text/javascript">
 </script>
-
