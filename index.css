@@ -124,6 +124,23 @@ p
     background-color: white;
 }
 
+.tab p
+{
+	position: relative;
+	display: inline-block;
+	/*float:left;*/
+}
+
+.menu
+{
+	display:none;
+}
+
+.stats
+{
+
+}
+
 /* Stats */ 
 #statsTitle
 {

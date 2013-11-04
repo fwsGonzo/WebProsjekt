@@ -4,7 +4,9 @@
 	</section>
 
 	<section id="middleSection">
-		<?php include 'stats.php'; ?>
+		<?php include 'stats.php'; 
+			include 'menu.php';
+		?>
 	</section>
 
 	<section id="rightSection">
