@@ -4,26 +4,43 @@
 	<script>
 		function toggleTab(i)
 		{
+			var chosen;
+			var notChosen;
 			if( i == 1)
 			{
-				//$(document).getElementById('stats').style.color='blue';
-				//var e = document.getElementById("stats");
-				//e.style.display='none';
-				$(".stats").hide();
-				alert("Hello World!");
+				//chosen = $(".stats");
+				//notchosen = $(".menu");
+				chosen = document.getElementById('stats');
+				notChosen = document.getElementById('menu');
 			}
 			else
 			{
-				var e = document.getElementById("menu");
-				
-				//e.id = "ape";
-				alert("bye world");
+				//chosen = $(".menu");
+				//notChosen = $(".stats");	
+				chosen = document.getElementById('menu');
+				notChosen = document.getElementById('stats');
 			}
+			chosen.style.display="inline";
+			notChosen.style.display="none";
+			
+			chosen.style.borderLeft.color='#FFFFFF';
+			chosen.style.borderTop.color='white';
+			chosen.style.borderRight.color='white';
+			
+			notChosen.style.borderLeft.color='black';
+			notChosen.style.borderTop.color='black';
+			notChosen.style.borderRight.color='black';
+			
+			//$(document).getElementById('stats').style.color='blue';
+			//var e = document.getElementById("stats");
+			//e.style.display='none';
+			//var e = document.getElementById("menu");
+			//e.id = "ape";
 		}
 	</script>
 </div>
 
-<div class="stats">
+<div id="stats" class="stats">
 	<table>
 		<tr>
 			<td id="statsTitle">General</td>
