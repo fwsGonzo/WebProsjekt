@@ -37,7 +37,7 @@
 	</script>
 	
 	<!-- hidden popup box -->
-	<div id="popup"></div>
+	<div id="popup">Test</div>
 	
 	
 <?php

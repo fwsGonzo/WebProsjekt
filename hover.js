@@ -7,9 +7,8 @@
 function hover(element, text)
 {
 	$(element).hover(
-	function() // show
+	function(event) // show
 	{
-		alert("hover");
 		$("#popup").innerHTML = text;
 		$("#popup").css(
 		{
@@ -18,9 +17,8 @@ function hover(element, text)
 			
 		}).stop().show(100);
 	},
-	function() // hide
+	function(event) // hide
 	{
-		alert("hide hover");
 		$("#popup").hide();
 	});
 }
