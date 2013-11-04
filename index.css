@@ -151,3 +151,13 @@ p
     font-weight: bold;
 }
 
+
+/*
+	Hover/popup dialogue
+*/
+#popup
+{
+	position: absolute;
+	display:  none;
+}
+

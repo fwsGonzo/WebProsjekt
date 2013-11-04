@@ -132,12 +132,13 @@ function createUpgradeList()
 	{
 		upgrades[i].id = i;
 		upgrades[i].visible = visible;
+		var idString = 'upgradeDiv' + i;
 		
 		// create DIV element for a single upgrade
 		var $upg = $('<div>',
 		{
 			class: 'upgradeDiv',
-			id   : 'upgradeDiv' + i,
+			id   : idString,
 			number: i
 			
 		}).appendTo('#rightSection');
@@ -162,7 +163,11 @@ function createUpgradeList()
 			// FIXME disable upgrade
 		}
 		
+		// set upgrade paragraph text
 		upgrades[i].updateText();
+		
+		// enable hovering dialogue
+		hover(idString, upgrades[i].desc);
 	}
 	
 	// we can't just create the upgrade event at ready(),
