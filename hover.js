@@ -9,7 +9,7 @@ function hover(element, text)
 	$(element).hover(
 	function(event) // show
 	{
-		$("#popup").innerHTML = text;
+		$("#popup").text(text);
 		$("#popup").css(
 		{
 			left: event.pageX + 1,
