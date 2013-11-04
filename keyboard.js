@@ -17,7 +17,11 @@ $('#keyboard').mouseup( function()
 
 function initKeyboard()
 {
+	// update keyboard numbers
 	updateKeyboard();
+	// canvas animation
+	matrix = new Matrix("#thematrix");
+	matrix.start();
 }
 
 function updateKeyboard()
