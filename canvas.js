@@ -16,8 +16,8 @@ function Matrix(c)
 	this.start = function()
 	{
 		var self = this;
-		var w = $(this.canvas).width();
-		var h = $(this.canvas).height();
+		var w = $(this.canvas).attr("width");
+		var h = $(this.canvas).attr("height");
 		
 		var mat = Array(300).join(0).split('');
 		var ctx = $(self.canvas)[0].getContext('2d');
@@ -25,15 +25,17 @@ function Matrix(c)
 		self.loop = setInterval(
 		function()
 		{
+			// 'slowly' clear the screen
 			ctx.fillStyle='rgba(0,0,0,.05)';
 			ctx.fillRect(0, 0, w, h);
 			ctx.fillStyle='#0F0';			
 			ctx.font = '10pt monospace';
 			
+			// scatter characters
 			mat.map(
 			function(y, index)
 			{
-				var text = String.fromCharCode(1e2+Math.random()*33);
+				var text = String.fromCharCode(97 + Math.random()*26);
 				var x = (index * 10) + 10;
 				ctx.fillText(text, x, y);
 				

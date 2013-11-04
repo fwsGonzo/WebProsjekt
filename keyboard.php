@@ -1,4 +1,4 @@
-<canvas id="thematrix">
+<canvas id="thematrix" width=400 height=1000>
 <!-- Note:
 	Canvas needs to be placed in such a way that
 	its located under / covers everything else
