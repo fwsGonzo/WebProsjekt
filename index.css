@@ -2,7 +2,7 @@
 
 body
 {
-	background-color: white;
+	background-color: black;
 	
 	/* default text color */
 	color: #363636;
@@ -41,7 +41,9 @@ p
 .inparagraph
 {
 	/* Tekst-formatering osv. */
-	color: #4444AA;
+	font-family: monospace;
+	color: #5555CC;
+	/*color: #4444AA;*/
         text-align: center;
 }
 
