@@ -63,6 +63,7 @@ function setCodelines(cl)
 {
 	localStorage.codelines = cl;
 	updateKeyboard();
+	updateBuildings();
 }
 
 function getClickPower()

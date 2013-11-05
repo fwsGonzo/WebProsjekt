@@ -162,15 +162,21 @@ p
     margin-right: 0px;
 }
 
-.upgradeDiv
+.buildingDiv
 {
     /*background-color: gray;*/
     border: 3px groove green;
     border-radius: 15px;
     margin-top: 3px;
 }
+.buildingDisabledDiv
+{
+    border: 3px groove gray;
+    border-radius: 15px;
+    margin-top: 3px;
+}
 
-.upgradeCaption
+.buildingCaption
 {
     font-size: 16px;
     color: red;

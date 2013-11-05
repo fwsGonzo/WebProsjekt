@@ -46,10 +46,31 @@ function Building(name, desc, cost, cps)
 		}
 		else $("#buildingDiv" + this.id).hide();
 	}
+	this.costTest = function()
+	{
+		// disable if we can't afford this building
+		if (this.getCost() > getCodelines())
+		{
+			// disable this building
+			this.enable(false);
+		}
+		else
+		{
+			// enable this building
+			this.enable(true);
+		}
+	}
 	this.enable = function(toggle)
 	{
 		this.enabled = toggle;
-		// FIXME
+		if (this.enabled)
+		{
+			$("#buildingDiv" + this.id).attr("class", "buildingDiv");
+		}
+		else
+		{
+			$("#buildingDiv" + this.id).attr("class", "buildingDisabledDiv");
+		}
 	}
 	this.updateText = function()
 	{
@@ -144,23 +165,20 @@ function createBuildingList()
 			
 		}).appendTo($upg);
 		
-		// disable all upgrades we can't afford
-		if (buildings[i].getCost() > getCodelines())
-		{
-			// FIXME disable upgrade
-		}
+		// enable hovering dialogue
+		hover("#buildingDiv" + i, buildings[i].desc);
 		
 		// set upgrade paragraph text
 		buildings[i].updateText();
-		
-		// enable hovering dialogue
-		hover("#buildingDiv" + i, buildings[i].desc);
 	}
 	
 	// we can't just create the upgrade event at ready(),
 	// we need to explicitly create it after we have created all the elements
 	createBuildFunctions();
 	
+	// perform cost test enabling/disabling this building visually
+	// note: put this last, as it may change class attribute
+	updateBuildings();
 }
 
 function createBuildFunctions()
@@ -192,4 +210,13 @@ function createBuildFunctions()
 	});
 }
 
+// used from setCodelines, as buildings could be enabled/disabled
+// by changes in the amount of codelines available
+function updateBuildings()
+{
+	for (var i = 0; i < buildings.length; i++)
+	{
+		buildings[i].costTest();
+	}
+}
 
