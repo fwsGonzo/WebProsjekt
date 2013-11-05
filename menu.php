@@ -1,3 +1,6 @@
-<div id="menu" class="menu">
+<section id="menu">
 	<h2>Menu</h2>
-</div>
+	<button>Reset</button>
+	<p>reset</p>
+	
+</section>
