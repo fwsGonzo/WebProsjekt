@@ -15,7 +15,7 @@ function Building(name, desc, cost, cps)
 	this.desc = desc;
 	this.cost = cost;
 	// enabled if we can afford (another of) this building
-	this.enabled = false;
+	this.enabled = true;
 	// corresponding HTML element
 	this.id = 0;
 	// the amount of base codelines per second this building
@@ -52,12 +52,12 @@ function Building(name, desc, cost, cps)
 		if (this.getCost() > getCodelines())
 		{
 			// disable this building
-			this.enable(false);
+			if (this.enabled) this.enable(false);
 		}
 		else
 		{
 			// enable this building
-			this.enable(true);
+			if (!this.enabled) this.enable(true);
 		}
 	}
 	this.enable = function(toggle)
