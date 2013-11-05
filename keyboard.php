@@ -43,6 +43,6 @@ $(document).ready(function(){
 </script>
 <script src="keyboard.js" type="text/javascript">
 </script>
-<script src="hover.js" type="text/javascript">
+<script src="cps.js" type="text/javascript">
 </script>
 

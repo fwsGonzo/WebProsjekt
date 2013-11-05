@@ -1,26 +1,24 @@
 /**
- * Upgrades
+ * Buildings
  * 
  * 
 **/
 
-var upgrades = [];
+var buildings = [];
 
 var COST_MULTIPLIER = 1.2;
 
-function Upgrade(name, desc, cost, cps)
+function Building(name, desc, cost, cps)
 {
 	// attributes
 	this.name = name;
 	this.desc = desc;
 	this.cost = cost;
-	// visible if we have unlocked this upgrade
-	this.visible = false;
-	// enabled if we can afford this upgrade
+	// enabled if we can afford (another of) this building
 	this.enabled = false;
 	// corresponding HTML element
 	this.id = 0;
-	// the amount of codelines per second this upgrade
+	// the amount of base codelines per second this building
 	// constantly gives
 	this.cps  = cps;
 	// the amount we have purchased of this upgrade
@@ -30,27 +28,23 @@ function Upgrade(name, desc, cost, cps)
 	{
 		return Math.round(this.cost * (1 + Math.pow(COST_MULTIPLIER, this.count)));
 	}
-	this.upgrade = function()
+	this.getCPS = function()
+	{
+		return this.count * this.cps;
+	}
+	this.build = function()
 	{
 		this.count += 1;
-		
-		// if the next upgrade in our list is disabled,
-		// enable it
-		if (this.id+1 < upgrades.length)
-		{
-			upgrades[this.id+1].show(true);
-		}
-		
 		this.updateText();
 	}
 	this.show = function(toggle)
 	{
-		this.visible = toggle;
+		//this.visible = toggle;
 		if (toggle)
 		{
-			$("#upgradeDiv" + this.id).show();
+			$("#buildingDiv" + this.id).show();
 		}
-		else $("#upgradeDiv" + this.id).hide();
+		else $("#buildingDiv" + this.id).hide();
 	}
 	this.enable = function(toggle)
 	{
@@ -60,84 +54,83 @@ function Upgrade(name, desc, cost, cps)
 	this.updateText = function()
 	{
 		// text: name [count]  cost: [cost]
-		$("#upgradeCaption" + this.id).text(
+		$("#buildingCaption" + this.id).text(
 			this.name + " " + this.count + "  cost: " + formattedNumber(this.getCost())
 		);
 	}
 }
 
-function createUpgrade(name, desc, cost, cps)
+function createBuilding(name, desc, cost, cps)
 {
-	var upg = new Upgrade(name, desc, cost, cps);
-	upgrades.push(upg);
+	var upg = new Building(name, desc, cost, cps);
+	buildings.push(upg);
 }
 
-function initUpgrades()
+function initBuildings()
 {
-	createUpgrade(
+	createBuilding(
 		"Programming", 
 		"Learn to program! There can be no code lines without programming.", 
 		5, 1);
-	createUpgrade(
+	createBuilding(
 		"Comment Standard", 
 		"Name, Date, Original Author, Purpose, Intent, ...", 
 		50, 10);
-	createUpgrade(
+	createBuilding(
 		"Student Programmer", 
 		"Slowly bloats the codebase by reinventing the wheel and using complex solutions to simple problems.", 
 		500, 50);
-	createUpgrade(
+	createBuilding(
 		"Moving Deadline", 
 		"Your programming team now has to write code twice as fast, making sure that refactoring and problem space reduction never happens.", 
 		5000, 500);
-	createUpgrade(
+	createBuilding(
 		"Optimize planning",
 		"",
 		50000, 2000);
-	createUpgrade(
+	createBuilding(
 		"Feature creep",
 		"",
 		500000, 10000);
-	createUpgrade(
+	createBuilding(
 		"Assembly",
 		"",
 		5000000, 50000);
-	createUpgrade(
+	createBuilding(
 		"Reduce redundancies",
 		"",
 		50000000, 120000);
-	createUpgrade(
+	createBuilding(
 		"Government Project",
 		"",
 		550000000, 1500000);
 	
 	// resume (any) stored data
-	resumeUpgrades();
+	resumeBuildings();
 	// create HTML from upgrade list
-	createUpgradeList();
+	createBuildingList();
 }
 
 // load any potentially stored upgrade counts
-function resumeUpgrades()
+function resumeBuildings()
 {
 	// FIXME
 }
 
-function createUpgradeList()
+function createBuildingList()
 {
 	var enabled = true;
 	var visible = true;
 	
-	for(var i = 0; i < upgrades.length; i++)
+	for(var i = 0; i < buildings.length; i++)
 	{
-		upgrades[i].id = i;
-		upgrades[i].visible = visible;
+		buildings[i].id = i;
 		
 		// create DIV element for a single upgrade
 		var $upg = $('<div>',
 		{
-			class: 'upgradeDiv',
-			id   : 'upgradeDiv' + i,
+			class: 'buildingDiv',
+			id   : 'buildingDiv' + i,
 			number: i
 			
 		}).appendTo('#rightSection');
@@ -145,23 +138,23 @@ function createUpgradeList()
 		// add caption
 		$('<p>',
 		{
-			class: 'upgradeCaption',
-			id   : 'upgradeCaption' + i,
+			class: 'buildingCaption',
+			id   : 'buildingCaption' + i,
 			number: i
 			
 		}).appendTo($upg);
 		
 		// disable all upgrades we can't afford
-		if (upgrades[i].getCost() > getCodelines())
+		if (buildings[i].getCost() > getCodelines())
 		{
 			// FIXME disable upgrade
 		}
 		
 		// set upgrade paragraph text
-		upgrades[i].updateText();
+		buildings[i].updateText();
 		
 		// enable hovering dialogue
-		hover("#upgradeDiv" + i, upgrades[i].desc);
+		hover("#buildingDiv" + i, buildings[i].desc);
 	}
 	
 	// we can't just create the upgrade event at ready(),
@@ -169,4 +162,34 @@ function createUpgradeList()
 	createBuildFunctions();
 	
 }
+
+function createBuildFunctions()
+{
+	// we don't need to create unique functions for each building
+	// since each building knows its own id
+	$(".buildingDiv").click( function()
+	{
+		// user wants to purchase an upgrade (clicked)
+		// find which upgrade it is
+		var id = Number(this.getAttribute("number"));
+		
+		// find upgrade object, and calculate cost
+		var building = buildings[id];
+		var cost     = building.getCost();
+		
+		// check that the upgrade is is cost range
+		var cl = getCodelines();
+		if (cl < cost) return;
+		// subtract cost
+		setCodelines(cl-cost);
+		
+		// add a building
+		building.build(id);
+		
+		// update numbers to reflect change
+		updateKeyboard();
+		updateCPS();
+	});
+}
+
 

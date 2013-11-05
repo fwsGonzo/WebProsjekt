@@ -10,9 +10,9 @@ $(document).ready( function()
 	// from keyboard.js:
 	initKeyboard();
 	
-	// upgrades manager
-	// from upgrades.js:
-	initUpgrades();
+	// initialize 'buildings'
+	// from buildings.js:
+	initBuildings();
 	
 	// start automatic CPS timer
 	cps.start();
