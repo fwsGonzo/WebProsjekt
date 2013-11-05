@@ -4,6 +4,9 @@
  * 
 **/
 
+var CPS_UPDATE_INTERVAL = 100; // milliseconds
+
+
 function CPS(newCPS)
 {
 	this.cps = Number(newCPS);
@@ -25,16 +28,14 @@ function CPS(newCPS)
 	}
 	this.start = function()
 	{
-		var interval = 50;
+		var self     = this;
+		var interval = CPS_UPDATE_INTERVAL;
 		
 		// automatic cps updates
 		setInterval( function()
 		{
-			// NOTE: setInterval is not run as member function,
-			// so we (unfortunately) have to explicitly access 'cps'
-			
 			// cps is measured in seconds, so we need to convert it to interval
-			addCodelines(cps.getCPS() * (interval / 1000));
+			addCodelines(self.getCPS() * (interval / 1000));
 			
 		}, interval);
 	}
