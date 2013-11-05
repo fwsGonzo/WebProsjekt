@@ -1,120 +1,70 @@
 /**
  * Upgrades
  * 
+ * Upgrades normally boost cps by boosting a certain building type.
+ * As the player buys more buildings, new upgrades are unlocked.
+ * 
+ * Note:
+ * building base cps = cps
+ * building cps      = count * cps
  * 
 **/
 
 var upgrades = [];
 
-var COST_MULTIPLIER = 1.2;
-
-function Upgrade(name, desc, cost, cps)
+function Upgrade(name, desc, cost, building, req)
 {
+	// my index
+	this.id = 0;
 	// attributes
 	this.name = name;
 	this.desc = desc;
 	this.cost = cost;
-	// visible if we have unlocked this upgrade
-	this.visible = false;
-	// enabled if we can afford this upgrade
-	this.enabled = false;
-	// corresponding HTML element
-	this.id = 0;
+	// the building this upgrade is connected to
+	this.building = building;
+	// the requirements for this upgrade showing up
+	this.requirement = req;
+	// 0 = invisible, 1 = can be bought, 2 = enabled
+	this.state = 0;
 	// the amount of codelines per second this upgrade
-	// constantly gives
-	this.cps  = cps;
-	// the amount we have purchased of this upgrade
-	this.count = 0;
+	// permanently gives
+	this.getCPS  = undefined;
 	
-	this.getCost = function()
+	this.requirementsMet = function()
 	{
-		return Math.round(this.cost * (1 + Math.pow(COST_MULTIPLIER, this.count)));
+		return buildings[this.building].count == this.requirement;
 	}
-	this.upgrade = function()
+	
+	this.buy = function()
 	{
-		this.count += 1;
-		
-		// if the next upgrade in our list is disabled,
-		// enable it
-		if (this.id+1 < upgrades.length)
-		{
-			upgrades[this.id+1].show(true);
-		}
-		
-		this.updateText();
+		// FIXME enable upgrade
+		this.state = 2;
+		// remove this upgrade
+		$(this).hide();
 	}
-	this.show = function(toggle)
-	{
-		this.visible = toggle;
-		if (toggle)
-		{
-			$("#upgradeDiv" + this.id).show();
-		}
-		else $("#upgradeDiv" + this.id).hide();
-	}
-	this.enable = function(toggle)
-	{
-		this.enabled = toggle;
-		// FIXME
-	}
-	this.updateText = function()
-	{
-		// text: name [count]  cost: [cost]
-		$("#upgradeCaption" + this.id).text(
-			this.name + " " + this.count + "  cost: " + formattedNumber(this.getCost())
-		);
-	}
-}
-
-function createUpgrade(name, desc, cost, cps)
-{
-	var upg = new Upgrade(name, desc, cost, cps);
-	upgrades.push(upg);
 }
 
 function initUpgrades()
 {
-	createUpgrade(
-		"Programming", 
-		"Learn to program! There can be no code lines without programming.", 
-		5, 1);
-	createUpgrade(
-		"Comment Standard", 
-		"Name, Date, Original Author, Purpose, Intent, ...", 
-		50, 10);
-	createUpgrade(
-		"Student Programmer", 
-		"Slowly bloats the codebase by reinventing the wheel and using complex solutions to simple problems.", 
-		500, 50);
-	createUpgrade(
-		"Moving Deadline", 
-		"Your programming team now has to write code twice as fast, making sure that refactoring and problem space reduction never happens.", 
-		5000, 500);
-	createUpgrade(
-		"Optimize planning",
-		"",
-		50000, 2000);
-	createUpgrade(
-		"Feature creep",
-		"",
-		500000, 10000);
-	createUpgrade(
-		"Assembly",
-		"",
-		5000000, 50000);
-	createUpgrade(
-		"Reduce redundancies",
-		"",
-		50000000, 120000);
-	createUpgrade(
-		"Government Project",
-		"",
-		550000000, 1500000);
+	// create each upgrade manually
 	
-	// resume (any) stored data
-	resumeUpgrades();
-	// create HTML from upgrade list
-	createUpgradeList();
+	var upg = new Upgrade(
+		"Xtreme Programming",
+		"Write everything in one go, and never look back",
+		100,
+		0, 1); // requires 1 of building 0 (Programming)
+	upg.getCPS = function(base_cps)
+	{
+		return base_cps + 2;
+	}
+	
+	upgrades.push(upg);
+	
+	// set each upgrades unique id
+	for (var i = 0; i < upgrades.length; i++)
+	{
+		upgrades[i].id = i;
+	}
 }
 
 // load any potentially stored upgrade counts
@@ -123,50 +73,21 @@ function resumeUpgrades()
 	// FIXME
 }
 
-function createUpgradeList()
+function applyUpgrades(building, cps)
 {
-	var enabled = true;
-	var visible = true;
+	// apply any upgrades that affect 'building',
+	// starting with base cps = cps
+	var c = cps;
 	
-	for(var i = 0; i < upgrades.length; i++)
+	// then calculate in each upgrade using custom cps function
+	for (var i = 0; i < upgrades.length; i++)
 	{
-		upgrades[i].id = i;
-		upgrades[i].visible = visible;
-		
-		// create DIV element for a single upgrade
-		var $upg = $('<div>',
+		if (upgrades[i].state == 2 && upgrades[i].building == building)
 		{
-			class: 'upgradeDiv',
-			id   : 'upgradeDiv' + i,
-			number: i
-			
-		}).appendTo('#rightSection');
-		
-		// add caption
-		$('<p>',
-		{
-			class: 'upgradeCaption',
-			id   : 'upgradeCaption' + i,
-			number: i
-			
-		}).appendTo($upg);
-		
-		// disable all upgrades we can't afford
-		if (upgrades[i].getCost() > getCodelines())
-		{
-			// FIXME disable upgrade
+			c = upgrades[i].getCPS(c);
 		}
-		
-		// set upgrade paragraph text
-		upgrades[i].updateText();
-		
-		// enable hovering dialogue
-		hover("#upgradeDiv" + i, upgrades[i].desc);
 	}
-	
-	// we can't just create the upgrade event at ready(),
-	// we need to explicitly create it after we have created all the elements
-	createBuildFunctions();
-	
+	// finally, return total base cps
+	return c;
 }
 

@@ -14,6 +14,10 @@ $(document).ready( function()
 	// from buildings.js:
 	initBuildings();
 	
+	// initialize 'upgrades' which affect buildings
+	// from upgrades.js:
+	initUpgrades();
+	
 	// start automatic CPS timer
 	cps.start();
 	updateCPS();
