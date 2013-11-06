@@ -120,8 +120,8 @@ p
 {
 	width: 20%;
     border-right: 3px solid blue;
-    border-left: 3px dotted red;
-    background-color: white;
+    /*border-left: 3px dotted red;*/
+    background-color: black;
 }
 
 .tab
@@ -133,11 +133,18 @@ p
 {
 	position: relative;
 	display: inline-block;
+	background-color: #292929;
+	margin:0px;
+	padding-top: 7px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
-.menu
+/*Menusection*/
+#menu
 {
 	display:none;
+	background-color: black;
 }
 
 .stats
@@ -158,6 +165,7 @@ p
 /*Below is the rightsection*/
 #rightSection
 {
+	z-index: 1;
 	width: 40%;
     margin-right: 0px;
 }
@@ -195,5 +203,9 @@ p
 {
 	position: absolute;
 	display:  none;
+	
+	width:300px;
+	z-index: 5;
+	background-color: white;
 }
 

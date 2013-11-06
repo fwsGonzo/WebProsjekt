@@ -22,25 +22,11 @@
 			}
 			chosen.style.display="inline";
 			notChosen.style.display="none";
-			
-			chosen.style.borderLeft.color='#FFFFFF';
-			chosen.style.borderTop.color='white';
-			chosen.style.borderRight.color='white';
-			
-			notChosen.style.borderLeft.color='black';
-			notChosen.style.borderTop.color='black';
-			notChosen.style.borderRight.color='black';
-			
-			//$(document).getElementById('stats').style.color='blue';
-			//var e = document.getElementById("stats");
-			//e.style.display='none';
-			//var e = document.getElementById("menu");
-			//e.id = "ape";
 		}
 	</script>
 </div>
 
-<div id="stats" class="stats">
+<section id="stats">
 	<table>
 		<tr>
 			<td id="statsTitle">General</td>
@@ -71,4 +57,4 @@
 			<td class="HMC">x</td>
 		</tr>
 	</table>
-</div>
+</section>
