@@ -8,13 +8,13 @@
 -->
 </canvas>
 <div id="codelinesBox">
-    <p>Codelines: <pre id="codelines">0</pre></p>
+    <p>Codelines: </p><pre id="codelines">0</pre>
 </div>
-<div id="cspBox">
-    <p>cps:       <pre id="cps">0</pre></p>
+<div id="cpsBox">
+    <p>cps:       </p><pre id="cps">0</pre>
 </div>
 <div id="clickpowerBox">
-    <p>clickpower:<pre id="clickpower">0</pre></p>
+    <p>clickpower: </p><pre id="clickpower">0</pre>
 </div>
 
 <img id="keyboard" src="keyboard.png" alt="~ Keyboard ~" />
