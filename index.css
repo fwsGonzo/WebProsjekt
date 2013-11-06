@@ -2,39 +2,39 @@
 
 body
 {
-	background-color: black;
-	
-	/* default text color */
-	color: #363636;
+    background-color: black;
+
+    /* default text color */
+    color: #363636;
 }
 
 h1, h2, h3
 {
-	/* Overskrifter */
-	font-family: monospace;
-	color: #5555CC;
+    /* Overskrifter */
+    font-family: monospace;
+    color: #5555CC;
 }
 
 p
 {
-	/* Tekst paragrafer */
-	font-family: monospace;
-	color: #A3A3F6;
+    /* Tekst paragrafer */
+    font-family: monospace;
+    color: #A3A3F6;
 }
 
 /*Container class for the #leftSection, #middleSection, #rightSection*/
 .coolframe
 {
-	background-color: black;
-	overflow-x: auto;
-	overflow-y: auto;
+    background-color: black;
+    overflow-x: auto;
+    overflow-y: auto;
 }
 
 /*Container for the #leftSection, #middleSection, #rightSection*/
 #subframe
 {
-	/* float:  left; */
-	padding: 2%;
+    /* float:  left; */
+    padding: 2%;
     width:96%;
     height:100%;
     position: relative;
@@ -43,20 +43,20 @@ p
 /*This is the footer and header*/
 .inparagraph
 {
-	/* Tekst-formatering osv. */
-	font-family: monospace;
-	color: #A3A3F6;
+    /* Tekst-formatering osv. */
+    font-family: monospace;
+    color: #A3A3F6;
     text-align: center;
 }
 
 /*Commonstruff for the three sections*/
 #leftSection, #middleSection, #rightSection
 {
-	position: relative;
-	float: left;
-	display: inline-block;
+    position: relative;
+    float: left;
+    display: inline-block;
     height: 600px;
-	/*overflow: hidden;*/
+    /*overflow: hidden;*/
 }
 
 
@@ -64,11 +64,10 @@ p
 /*Below is the leftsection*/
 #leftSection
 {
-	width: 30%;
-    font-size: 16px;
-    border-right: 3px solid blue;
-       
+    width: 30%;
+    font-size: 16px;       
 }
+
 /*The three counters*/
 #codelines, #cps, #clickpower
 {
@@ -78,38 +77,38 @@ p
 /*The matrix in the background*/
 #thematrix
 {
-	position: relative;
-	top: 0; 
-	left: 0;
-	z-index: 1;
-	width: 100%;
-	height: 100%;
+    position: relative;
+    top: 0; 
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
 }
 
 /*Positioning of the elements above the matrix*/
 #codelinesBox, #cspBox, #clickpowerBox, #keyboard
 {
-	position: absolute;
-	z-index: 3;
-	left: 5%;
+    position: absolute;
+    z-index: 3;
+    left: 5%;
 }
 
 #codelinesBox
 {
-	top: 10%;
+    top: 10%;
 }
 #cspBox
 {
-	top: 20%;
+    top: 20%;
 }
 #clickpowerBox
 {
-	top: 30%;
+    top: 30%;
 }
 
 #keyboard
 {
-	top: 50%;
+    top: 50%;
 }
 /*End of leftsection*/
 
@@ -118,33 +117,37 @@ p
 /*Below is the middlesection*/
 #middleSection
 {
-	width: 20%;
-    border-right: 3px solid blue;
-    /*border-left: 3px dotted red;*/
+    width: 20%;
+    color: white;
+    border-left:15px solid;
+    border-right: 15px solid;
     background-color: black;
+    border-image: url(icons/border2.png) 30 30 round;
+    -webkit-border-image: url(icons/border2.png) 30 30 round; /* Safari 5 */
+    -o-border-image: url(icons/border2.png) 30 30 round; /* Opera */
 }
 
 .tab
 {
-	background-color: black;
+    background-color: black;
 }
 
 .tab p
 {
-	position: relative;
-	display: inline-block;
-	background-color: #292929;
-	margin:0px;
-	padding-top: 7px;
-	padding-left: 5px;
-	padding-right: 5px;
+    position: relative;
+    display: inline-block;
+    background-color: #292929;
+    margin:0px;
+    padding-top: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 /*Menusection*/
 #menu
 {
-	display:none;
-	background-color: black;
+    display:none;
+    background-color: black;
 }
 
 .stats
@@ -165,8 +168,8 @@ p
 /*Below is the rightsection*/
 #rightSection
 {
-	z-index: 1;
-	width: 40%;
+    z-index: 1;
+    width: 40%;
     margin-right: 0px;
 }
 
@@ -177,6 +180,12 @@ p
     border-radius: 15px;
     margin-top: 3px;
 }
+
+.buildingDiv img
+{
+    float: left;
+}
+
 .buildingDisabledDiv
 {
     border: 3px groove gray;
@@ -189,23 +198,19 @@ p
     font-size: 16px;
     color: red;
     padding-left: 5px;
+    text-align: left;
 }
 /*End of rightsection*/
 
 
-
-
-
-/*
-	Hover/popup dialogue
-*/
+/* Hover/popup dialogue */
 #popup
 {
-	position: absolute;
-	display:  none;
-	
-	width:300px;
-	z-index: 5;
-	background-color: white;
+    position: absolute;
+    display:  none;
+
+    width:300px;
+    z-index: 5;
+    background-color: white;
 }
 

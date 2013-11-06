@@ -76,7 +76,7 @@ function Building(name, desc, cost, cps)
 	{
 		// text: name [count]  cost: [cost]
 		$("#buildingCaption" + this.id).text(
-			this.name + " " + this.count + "  cost: " + formattedNumber(this.getCost())
+			this.name + " " + this.count + " cost: " + formattedNumber(this.getCost())
 		);
 	}
 }
@@ -107,23 +107,23 @@ function initBuildings()
 		5000, 500);
 	createBuilding(
 		"Optimize planning",
-		"",
+		"Due to time constraints, it's better to reduce project planning, and instead hire more developers.",
 		50000, 2000);
 	createBuilding(
 		"Feature creep",
-		"",
+		"Your manager wants to please the customer, and while certain features never were part of the project initially, they certainly are now.",
 		500000, 10000);
 	createBuilding(
 		"Assembly",
-		"",
+		"The manager learned assembly in the 80's. Let's make sure even the most trivial things takes days to achieve!",
 		5000000, 50000);
 	createBuilding(
 		"Reduce redundancies",
-		"",
+		"Let go of some IT server staff, since they probably don't do anything anyways. Makes sure you have to rewrite everything now and then, because of outdated or lost backups.",
 		50000000, 120000);
 	createBuilding(
 		"Government Project",
-		"",
+		"This software is almost immediately outdated, and is estimated to require 15 additional years to reach completion. Instead of programming, your team is silently looking for work and is covering their asses with public \"I knew it all along\" e-mails.",
 		550000000, 1500000);
 	
 	// resume (any) stored data
@@ -155,6 +155,15 @@ function createBuildingList()
 			number: i
 			
 		}).appendTo('#rightSection');
+                
+                 // add img
+                $('<img src="icons/img' + i + '.png" alt="Picture to building" />',
+		{
+			class: 'buildingImg',
+			id   : 'buildingImg' + i,
+			number: i
+			
+		}).appendTo($upg);
 		
 		// add caption
 		$('<p>',
