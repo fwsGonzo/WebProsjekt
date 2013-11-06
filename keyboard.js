@@ -22,6 +22,8 @@ function initKeyboard()
 	// canvas animation
 	matrix = new Matrix("#thematrix");
 	matrix.start();
+	// create keyboard animation functions
+	createKeyboardAnimation();
 }
 
 function updateKeyboard()
@@ -77,5 +79,32 @@ function formattedNumber(x)
 	var parts = x.toString().split(".");
 	parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	return parts.join(".");
+}
+
+function createKeyboardAnimation()
+{
+	var distance = 3;	
+	
+    $("#keyboard").mousedown( function()
+    {
+		var marginTop = parseInt($(this).css("margin-top"));
+		marginTop  += distance;
+		$(this).css("margin-top", marginTop + "px")
+		
+		var marginLeft = parseInt($(this).css("margin-left"));
+		marginLeft += distance;
+		$(this).css("margin-left", marginLeft + "px");
+
+    })
+    $("#keyboard").mouseup( function()
+    {
+		var marginTop = parseInt($(this).css("margin-top"));
+		marginTop  -= distance;
+		$(this).css("margin-top", marginTop + "px")
+		
+		var marginLeft = parseInt($(this).css("margin-left"));
+		marginLeft -= distance;
+		$(this).css("margin-left", marginLeft + "px");
+    });
 }
 
