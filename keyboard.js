@@ -58,6 +58,9 @@ function keyboardClick()
 // adds codelines based on some number, eg. factor of cps
 function addCodelines(number)
 {
+	// update statistics (add to game and all-time totals)
+	updateStatsCL(number);
+	// add codelines to our current total
 	var cl = Number(localStorage.codelines) + number || number;
 	setCodelines(cl);
 }

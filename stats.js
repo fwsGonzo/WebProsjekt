@@ -21,7 +21,7 @@ function updateStatsCL(cl)
 	$('#statCodelines').text(formattedNumber(Math.round(cl)));
 	
 	// add codelines to totals
-	totalCodelines(tick)
+	totalCodelines(cl);
 }
 
 // upgrade how many codelines accumulated for this game 
