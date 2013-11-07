@@ -52,5 +52,9 @@
 			<td>Hand-made-codelines:</td>
 			<td id="HMC">x</td>
 		</tr>
+		<tr>
+			<td>Code clicks:</td>
+			<td id="codeClicks">x</td>
+		</tr>
 	</table>
 </section>
