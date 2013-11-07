@@ -1,6 +1,6 @@
 <div class="tab">
 	<p id="statsTab" onclick="toggleTab(1)">Stats</p>
-	<p id="menuTab" onclick="toggleTab(2)">Meny</p>
+	<p id="menuTab" onclick="toggleTab(2)">Menu</p>
 	<script>
 		function toggleTab(i)
 		{

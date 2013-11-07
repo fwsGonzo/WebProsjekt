@@ -144,18 +144,18 @@ p
 .tab
 {
     background-color: black;
+    text-align: center;
     
 }
 
 .tab p
 {
+    font-size: 24px;
     position: relative;
     display: inline-block;
     background-color: #292929;
-    margin:0px;
-    padding-top: 7px;
-    padding-left: 5px;
-    padding-right: 5px;
+    margin: 0px 10px;
+    padding: 7px;
 }
 
 /*Menusection*/
@@ -185,7 +185,7 @@ p
 /* Stats */ 
 #statsTitle
 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -211,7 +211,7 @@ td
 {
     /*background-color: gray;*/
     border: 5px groove green;
-    margin-top: 3px;
+    margin-top: 5px;
 }
 
 .buildingDiv:hover
@@ -223,18 +223,22 @@ td
 {
     float: left;
     height: 100%;
+    padding-top: 2px;
+    padding-left: 2px;
 }
 
 .buildingDisabledDiv
 {
-    border: 3px groove gray;
-    margin-top: 3px;
+    border: 5px groove gray;
+    margin-top: 5px;
     
 }
 
 .buildingDisabledDiv img
 {
     float:left;
+    padding-top: 2px;
+    padding-left: 2px;
 }
 
 .buildingCaption
