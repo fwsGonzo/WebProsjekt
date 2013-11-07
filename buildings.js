@@ -37,6 +37,8 @@ function Building(name, desc, cost, cps)
 		this.count += 1;
 		this.updateText();
 	}
+	
+	// show/hide building
 	this.show = function(toggle)
 	{
 		//this.visible = toggle;
@@ -46,6 +48,9 @@ function Building(name, desc, cost, cps)
 		}
 		else $("#buildingDiv" + this.id).hide();
 	}
+	
+	// enables and disables building based on whether or
+	// not we can afford it right now (no return value)
 	this.costTest = function()
 	{
 		// disable if we can't afford this building
@@ -60,6 +65,7 @@ function Building(name, desc, cost, cps)
 			if (!this.enabled) this.enable(true);
 		}
 	}
+	// enable / disable building
 	this.enable = function(toggle)
 	{
 		this.enabled = toggle;
@@ -72,12 +78,11 @@ function Building(name, desc, cost, cps)
 			$("#buildingDiv" + this.id).attr("class", "buildingDisabledDiv");
 		}
 	}
+	// update cost & count
 	this.updateText = function()
 	{
-		// text: name [count]  cost: [cost]
-		$("#buildingCaption" + this.id).text(
-			this.name + " " + this.count + " cost: " + formattedNumber(this.getCost())
-		);
+		$("#buildingCost" + this.id).text(this.count);
+		$("#buildingCount" + this.id).text(formattedNumber(this.getCost()));
 	}
 }
 
@@ -154,25 +159,42 @@ function createBuildingList()
 			id   : 'buildingDiv' + i,
 			number: i
 			
-		}).appendTo('#rightSection');
-                
-                 // add img
-                $('<img src="icons/img' + i + '.png" alt="Picture to building" />',
+		}).appendTo('#buildings');
+		
+		// add building icon
+		$('<img>',
 		{
-			class: 'buildingImg',
-			id   : 'buildingImg' + i,
-			number: i
+			class: 'buildingIcon',
+			id   : 'buildingIcon' + i,
+			
+			src:   'icons/img' + i,
+			alt:   'Building icon ' + i,
 			
 		}).appendTo($upg);
 		
-		// add caption
+		// add text caption
 		$('<p>',
 		{
-			class: 'buildingCaption',
-			id   : 'buildingCaption' + i,
-			number: i
+			class: 'buildingText',
+			id   : 'buildingText' + i,
 			
-		}).appendTo($upg);
+		}).appendTo($upg).text(buildings[i].name);
+		
+		// add amount of owned buildings
+		$('<p>',
+		{
+			class: 'buildingCount',
+			id   : 'buildingCount' + i,
+			
+		}).appendTo($upg).text('0');
+		
+		// add building cost
+		$('<p>',
+		{
+			class: 'buildingCost',
+			id   : 'buildingCost' + i,
+			
+		}).appendTo($upg).text('0');
 		
 		// enable hovering dialogue
 		hover("#buildingDiv" + i, buildings[i].desc);
