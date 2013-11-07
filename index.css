@@ -3,7 +3,8 @@
 body
 {
     background-color: black;
-
+    width: 99%;
+    height: 100%;
     /* default text color */
     color: #363636;
 }
@@ -35,9 +36,6 @@ p
 #subframe
 {
     /* float:  left; */
-    padding: 2%;
-    width:96%;
-    height:100%;
     position: relative;
 }
 
@@ -56,7 +54,7 @@ p
     position: relative;
     float: left;
     display: inline-block;
-    height: 600px;
+    height: 100%;
     /*overflow: hidden;*/
 }
 
@@ -128,11 +126,10 @@ p
 /*End of leftsection*/
 
 
-
 /*Below is the middlesection*/
 #middleSection
 {
-    width: 20%;
+    width: 30%;
     color: white;
     border-left:15px solid;
     border-right: 15px solid;
@@ -146,6 +143,7 @@ p
 .tab
 {
     background-color: black;
+    
 }
 
 .tab p
@@ -192,8 +190,8 @@ p
 #rightSection
 {
     z-index: 1;
-    width: 40%;
-    margin-right: 0px;
+    width: 35%;
+    
 }
 
 .buildingDiv
