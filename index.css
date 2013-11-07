@@ -13,6 +13,7 @@ h1, h2, h3
     /* Overskrifter */
     font-family: monospace;
     color: #5555CC;
+    text-align: center;
 }
 
 p
@@ -92,7 +93,6 @@ p
     text-align: center;
     width: 100%;
     height: 10%;
-    
 }
 
 /*The three counters*/
@@ -197,7 +197,7 @@ p
 .buildingDiv
 {
     /*background-color: gray;*/
-    border: 3px groove green;
+    border: 5px double green;
     border-radius: 15px;
     margin-top: 3px;
 }
@@ -222,7 +222,7 @@ p
 .buildingCaption
 {
     font-size: 16px;
-    color: red;
+    color: #5555CC;
     padding-left: 5px;
     text-align: left;
 }

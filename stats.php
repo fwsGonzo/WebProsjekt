@@ -27,11 +27,8 @@
 </div>
 
 <section id="stats">
+    <h2 id="statsTitle">Statistics</h2>
 	<table>
-		<tr>
-			<td id="statsTitle">General</td>
-			<td></td>
-		</tr>
 		<tr>
 			<td>Writen codelines (now):</td>
 			<td class="codelines">x</td>
