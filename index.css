@@ -197,8 +197,7 @@ p
 .buildingDiv
 {
     /*background-color: gray;*/
-    border: 5px double green;
-    border-radius: 15px;
+    border: 5px groove green;
     margin-top: 3px;
 }
 
@@ -216,14 +215,13 @@ p
 .buildingDisabledDiv
 {
     border: 3px groove gray;
-    border-radius: 15px;
     margin-top: 3px;
 }
 
 .buildingCaption
 {
-    font-size: 16px;
-    color: #5555CC;
+    font-size: 18px;
+    color: white;
     padding-left: 5px;
     text-align: left;
 }
