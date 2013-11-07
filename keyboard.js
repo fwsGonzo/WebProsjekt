@@ -49,6 +49,7 @@ function keyboardClick()
 	var power = getClickPower();
 	var cl = Number(localStorage.codelines) + power || power;
 	setCodelines(cl);
+	totalHandClick(power);
 }
 // adds codelines based on some number, eg. factor of cps
 function addCodelines(number)

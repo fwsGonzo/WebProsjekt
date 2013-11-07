@@ -8,15 +8,11 @@
 			var notChosen;
 			if( i == 1)
 			{
-				//chosen = $(".stats");
-				//notchosen = $(".menu");
 				chosen = document.getElementById('stats');
 				notChosen = document.getElementById('menu');
 			}
 			else
 			{
-				//chosen = $(".menu");
-				//notChosen = $(".stats");	
 				chosen = document.getElementById('menu');
 				notChosen = document.getElementById('stats');
 			}
@@ -26,32 +22,35 @@
 	</script>
 </div>
 
+<script src="stats.js" type="text/javascript">
+</script>
+
 <section id="stats">
     <h2 id="statsTitle">Statistics</h2>
 	<table>
 		<tr>
-			<td>Writen codelines (now):</td>
-			<td class="codelines">x</td>
+			<td>Written codelines (now):</td>
+			<td id="statCodelines">x</td>
 		</tr>
 		<tr>
 			<td>Codelines (this game):</td>
-			<td class="codelinesThisGame">x</td>
+			<td id="codelinesThisGame">x</td>
 		</tr>
 		<tr>
 			<td>Codelines (all time):</td>
-			<td class="codelinesAllTime">x</td>
+			<td id="codelinesAllTime">x</td>
 		</tr>
 		<tr>
 			<td>Session starter:</td>
-			<td class="SessionTime">x</td>
+			<td id="statSessionTime">x</td>
 		</tr>
 		<tr>
 			<td>codelines per second:</td>
-			<td class="cps">x</td>
+			<td id="statCPS">x</td>
 		</tr>
 		<tr>
 			<td>Hand-made-codelines:</td>
-			<td class="HMC">x</td>
+			<td id="HMC">x</td>
 		</tr>
 	</table>
 </section>
