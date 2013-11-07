@@ -19,7 +19,7 @@ h1, h2, h3
 p
 {
     /* Tekst paragrafer */
-    font-family: monospace;
+    font-family: calibri;
     color: #A3A3F6;
 }
 
@@ -91,8 +91,9 @@ p
     z-index: 2;
     position: absolute;
     text-align: center;
-    width: 100%;
+    width: 97%;
     height: 10%;
+    left: 3%;
 }
 
 /*The three counters*/
@@ -211,6 +212,7 @@ p
 .buildingDiv img
 {
     float: left;
+    height: 100%;
 }
 
 .buildingDisabledDiv
