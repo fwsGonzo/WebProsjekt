@@ -1,5 +1,6 @@
 /**
- * 
+ * Everything related to keyboard, codelines and cps visually
+ * Also calls some of the statistics update functions
  * 
 **/
 
@@ -41,6 +42,9 @@ function updateCPS()
 	// codelines per second
 	var c = cps.calculate();
 	$('#cps').text(formattedNumber(Math.round(c * 100) / 100));
+	
+	// update cps on stats section
+	updateStatsCPS(c);
 }
 
 // adds codelines based on factor of clicking power
@@ -64,8 +68,12 @@ function getCodelines()
 }
 function setCodelines(cl)
 {
+	// save new codelines in localstorage
 	localStorage.codelines = cl;
+	// update numbers visible to player
 	updateKeyboard();
+	// gaining or losing codelines changes which buildings
+	// are available for purchase
 	updateBuildings();
 }
 

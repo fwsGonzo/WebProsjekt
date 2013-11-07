@@ -37,8 +37,6 @@ function CPS(newCPS)
 			// cps is measured in seconds, so we need to convert it to interval
 			addCodelines(self.getCPS() * (interval / 1000));
 			
-			//sending data to statpage
-			updgradeStats(self.getCPS(), self.getCPS() * (interval / 1000));
 		}, interval);
 	}
 }

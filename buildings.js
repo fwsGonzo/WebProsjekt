@@ -213,8 +213,7 @@ function createBuildFunctions()
 		// add a building
 		building.build(id);
 		
-		// update numbers to reflect change
-		updateKeyboard();
+		// update cps on keyboard section
 		updateCPS();
 	});
 }

@@ -9,14 +9,18 @@ function initStats()
 	
 }
 
-//upgrade codelines and cps in statistics
-function updgradeStats(cps, tick)
+// update cps
+function updateStatsCPS(cps)
 {
-	var cl = getCodelines();
-	
+	$('#statCPS').text(formattedNumber(Math.round(cps * 100) / 100));
+}
+
+// update codelines
+function updateStatsCL(cl)
+{
 	$('#statCodelines').text(formattedNumber(Math.round(cl)));
-	$('#statCPS').text(formattedNumber(Math.round(cps)));
 	
+	// add codelines to totals
 	totalCodelines(tick)
 }
 
@@ -35,25 +39,25 @@ function totalCodelines(tick)
 //How many codelines gained by clicking
 function totalHandClick(click)
 {
-	//Updates how many codelines made by clicking
+	// add clicking power to physically made codelines
 	var c = Number(localStorage.handClick) + click || click;
 	localStorage.handClick = c;
 	$('#HMC').text(formattedNumber(Math.round(c)));
 	totalCodelines(click);
 	
-	//updates the number of mouseclicks made
+	// add a 1 to keyboard click counter stat
 	var d = Number(localStorage.mouseClicks) + 1 || 1;
 	localStorage.mouseClicks = d;
 	$('#codeClicks').text(formattedNumber(Math.round(d)));
 }
 
-//reset everything
+// hard reset: resets everything
 function reset()
 {
 	localStorage.clear();
 }
 
-//reset just this game
+// soft reset: reset just this game
 function resetThisGame()
 {
 	var a = Number(localStorage.allTime);
