@@ -1,12 +1,17 @@
-﻿/*
+﻿/**
  * For stat-page and menu-page
  *
- */
- 
- //initiate the stats
+**/
+
+// initializes some stats
 function initStats()
 {
+	var currentDate = new Date();
+	$("#statSessionStarted").text(currentDate);
 	
+	// game started date
+	var gameStarted = Date.parse(localStorage.gameStarted) || currentDate;
+	$("#statGameStarted").text(gameStarted);
 }
 
 // update cps

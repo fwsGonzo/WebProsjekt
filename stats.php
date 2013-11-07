@@ -29,32 +29,36 @@
     <h2 id="statsTitle">Statistics</h2>
 	<table>
 		<tr>
-			<td>Written codelines (now):</td>
+			<td>Game started:</td>
+			<td id="statGameStarted">x</td>
+		</tr>
+		<tr>
+			<td>Session started:</td>
+			<td id="statSessionStarted">x</td>
+		</tr>
+		<tr>
+			<td>Codelines:</td>
 			<td id="statCodelines">x</td>
 		</tr>
 		<tr>
-			<td>Codelines (this game):</td>
+			<td>Total codelines (this game):</td>
 			<td id="codelinesThisGame">x</td>
 		</tr>
 		<tr>
-			<td>Codelines (all time):</td>
+			<td>Total codelines (all time):</td>
 			<td id="codelinesAllTime">x</td>
 		</tr>
 		<tr>
-			<td>Session starter:</td>
-			<td id="statSessionTime">x</td>
-		</tr>
-		<tr>
-			<td>codelines per second:</td>
+			<td>Codelines/second (cps):</td>
 			<td id="statCPS">x</td>
 		</tr>
 		<tr>
-			<td>Hand-made-codelines:</td>
-			<td id="HMC">x</td>
+			<td>Keyboard clicks:</td>
+			<td id="codeClicks">x</td>
 		</tr>
 		<tr>
-			<td>Code clicks:</td>
-			<td id="codeClicks">x</td>
+			<td>Keyboard codeline contribution:</td>
+			<td id="HMC">x</td>
 		</tr>
 	</table>
 </section>

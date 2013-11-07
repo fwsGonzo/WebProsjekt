@@ -21,5 +21,8 @@ $(document).ready( function()
 	// start automatic CPS timer
 	cps.start();
 	updateCPS();
+	
+	// initialize some stats strings
+	initStats();
 });
 

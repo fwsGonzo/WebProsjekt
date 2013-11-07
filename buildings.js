@@ -168,7 +168,7 @@ function createBuildingList()
 			id   : 'buildingIcon' + i,
 			
 			src:   'icons/img' + i,
-			alt:   'Building icon ' + i,
+			alt:   buildings[i].name,
 			
 		}).appendTo($upg);
 		
