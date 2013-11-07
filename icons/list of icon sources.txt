@@ -8,5 +8,4 @@ img6 : http://upload.wikimedia.org/wikipedia/en/1/12/The_creative_assembly-logo.
 img7 : http://openclipart.org/image/50px/svg_to_png/35269/preferences-desktop-keyboard-shortcuts.png
 img8 : https://www.novec.com/About_NOVEC/images/US-Government-Clip-Art.JPG
 
-border1: http://wallpapersuzie.com/thumbnails/detail/20121226/abstract%20blue%20matrix%20binary%20digital%20art%201920x1080%20wallpaper_www.wallpaperhi.com_39.jpg
-border2: http://visenri.users.sourceforge.net/images/matrix-01.gif
+border: http://visenri.users.sourceforge.net/images/matrix-01.gif
