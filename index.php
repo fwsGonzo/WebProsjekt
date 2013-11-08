@@ -40,8 +40,8 @@
 	<div id="popup">Test</div>
 	
 	
-<!--<?php
+<?php
 	// and finally, page footer
 	include 'footer.php';
-?> -->
+?>
 
