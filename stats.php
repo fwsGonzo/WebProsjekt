@@ -30,35 +30,35 @@
 	<table>
 		<tr>
 			<td>Game started:</td>
-			<td id="statGameStarted">x</td>
+			<td id="statGameStarted">0</td>
 		</tr>
 		<tr>
 			<td>Session started:</td>
-			<td id="statSessionStarted">x</td>
+			<td id="statSessionStarted">0</td>
 		</tr>
 		<tr>
 			<td>Codelines:</td>
-			<td id="statCodelines">x</td>
+			<td id="statCodelines">0</td>
 		</tr>
 		<tr>
 			<td>Total codelines (this game):</td>
-			<td id="codelinesThisGame">x</td>
+			<td id="codelinesThisGame">0</td>
 		</tr>
 		<tr>
 			<td>Total codelines (all time):</td>
-			<td id="codelinesAllTime">x</td>
+			<td id="codelinesAllTime">0</td>
 		</tr>
 		<tr>
 			<td>Codelines/second (cps):</td>
-			<td id="statCPS">x</td>
+			<td id="statCPS">0</td>
 		</tr>
 		<tr>
 			<td>Keyboard clicks:</td>
-			<td id="codeClicks">x</td>
+			<td id="codeClicks">0</td>
 		</tr>
 		<tr>
 			<td>Keyboard codeline contribution:</td>
-			<td id="HMC">x</td>
+			<td id="HMC">0</td>
 		</tr>
 	</table>
 </section>

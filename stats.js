@@ -23,8 +23,8 @@ function updateStatsCPS(cps)
 // update codelines
 function updateStatsCL(cl)
 {
-	$('#statCodelines').text(formattedNumber(Math.round(cl)));
-	
+	$('#statCodelines').text(formattedNumber(Math.round(getCodelines())));
+
 	// add codelines to totals
 	totalCodelines(cl);
 }
