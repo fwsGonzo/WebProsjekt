@@ -1,0 +1,68 @@
+
+/*Below is the rightsection*/
+#rightSection
+{
+    z-index: 1;
+    width: 35%;
+    
+}
+
+.buildingDiv
+{
+    /*background-color: gray;*/
+    border: 5px groove green;
+    margin-top: 5px;
+}
+
+.buildingDiv:hover
+{
+    background-color: rgba(190,190,190,0.25);
+}
+
+.buildingDiv img
+{
+    float: left;
+    height: 100%;
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.buildingDisabledDiv
+{
+    border: 5px groove gray;
+    margin-top: 5px;
+    
+}
+
+.buildingDisabledDiv img
+{
+    float:left;
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.buildingText
+{
+    font-size: 1.5em;
+    color: white;
+    padding-left: 5px;
+    text-align: left;
+}
+
+.buildingCount
+{
+	font-size: 2em;
+	color: gray;
+	float: right;
+	position: relative;
+	top: -3.4em;
+}
+
+.buildingCost
+{
+	font-size: 1.5em;
+	color: gray;
+	
+}
+
+/*End of rightsection*/
