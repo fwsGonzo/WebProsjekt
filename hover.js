@@ -13,7 +13,8 @@ function hover(element, text)
 		$("#popup").css(
 		{
 			left: event.pageX + 1,
-			top:  event.pageY + 1
+			top:  event.pageY + 1,
+			height: 'auto'
 			
 		}).stop().show(100);
 	},
