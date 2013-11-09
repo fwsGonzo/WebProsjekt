@@ -12,7 +12,7 @@
 
 var upgrades = [];
 
-function Upgrade(name, desc, cost, building, req)
+function Upgrade(name, desc, cost, building, req, cps_function)
 {
 	// my index
 	this.id = 0;
@@ -23,24 +23,92 @@ function Upgrade(name, desc, cost, building, req)
 	// the building this upgrade is connected to
 	this.building = building;
 	// the requirements for this upgrade showing up
+	// such as requiring player to own 1 of building b
 	this.requirement = req;
-	// 0 = invisible, 1 = can be bought, 2 = enabled
+	// 0 = invisible, 1 = visible, 2 = purchased
 	this.state = 0;
 	// the amount of codelines per second this upgrade
 	// permanently gives
-	this.getCPS  = undefined;
+	this.getCPS  = cps_function;
 	
+	// returns the html element (string) representing this upgrade
+	this.getElement = function()
+	{
+		return "#upgradeIcon" + this.id;
+	}
+	
+	// for an upgrade to be visible, the requirements must be met
 	this.requirementsMet = function()
 	{
-		return buildings[this.building].count == this.requirement;
+		return buildings[this.building].count >= this.requirement;
+	}
+	this.resume = function()
+	{
+		// resume previous state, if any
+		this.state = localStorage.getItem("upgrade" + this.id) || 0;
+		
+		// if the state is not 2, we will just validate
+		if (this.state != 2)
+		{
+			if (this.requirementsMet())
+			{
+				// if the requirements are immediately met,
+				// just enable the upgrade
+				this.state = 1; // available for purchase
+				$(this.getElement()).show();
+			}
+		}
+		else // for state = 2, the upgrade was previously purchased,
+		{	// so we will just re-purchase it
+			this.buy();
+		}
 	}
 	
 	this.buy = function()
 	{
-		// FIXME enable upgrade
+		// enable upgrade by passing building cps through a cps function
+		buildings[this.building].cps = this.getCPS(buildings[this.building].cps);
+		
+		// remove/hide this upgrade from upgrade list
 		this.state = 2;
-		// remove this upgrade
-		$(this).hide();
+		$(this.getElement()).hide();
+		
+		// update cps to reflect change
+		updateCPS();
+	}
+	
+	this.create = function()
+	{
+		// creates upgrade image/icon
+		$('<img>',
+		{
+			class: 'upgradeIcon',
+			id   : 'upgradeIcon' + this.id,
+			
+			src:   'icons/img' + this.id + '.png',
+			alt:   this.name
+			
+		}).hide().appendTo($("#upgrades"));
+		
+		// hover info popup
+		hover(this.getElement(), this.name, this.desc);
+		
+		// click (purchase) event
+		var self = this;
+		
+		$(this.getElement()).click(
+		function()
+		{
+			// check that the upgrade is is cost range
+			var cl = getCodelines();
+			if (cl < self.cost) return;
+			// subtract cost
+			setCodelines(cl - self.cost);
+			
+			// apply change
+			self.buy();
+		});
+		
 	}
 }
 
@@ -48,22 +116,27 @@ function initUpgrades()
 {
 	// create each upgrade manually
 	
-	var upg = new Upgrade(
+	upgrades.push(
+	new Upgrade(
 		"Xtreme Programming",
 		"Write everything in one go, and never look back",
 		100,
-		0, 1); // requires 1 of building 0 (Programming)
-	upg.getCPS = function(base_cps)
-	{
-		return base_cps + 2;
-	}
-	
-	upgrades.push(upg);
+		0, 1, // requires 1 of building 0 (Programming)
+		
+		// the upgrade function that modifies base cps
+		function(base_cps)
+		{
+			return base_cps + 2;
+		}
+	));
 	
 	// set each upgrades unique id
 	for (var i = 0; i < upgrades.length; i++)
 	{
 		upgrades[i].id = i;
+		upgrades[i].create();
+		// set initial state for upgrade
+		upgrades[i].resume();
 	}
 }
 

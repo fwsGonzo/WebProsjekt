@@ -4,19 +4,20 @@
  * 
 **/
 
-function hover(element, text)
+function hover(element, title, text)
 {
 	$(element).hover(
 	function(event) // show
 	{
-		$("#popup").text(text);
+		$("#popupTitle").text(title);
+		$("#popupText").text(text);
 		$("#popup").css(
 		{
 			left: event.pageX + 1,
 			top:  event.pageY + 1,
 			height: 'auto'
 			
-		}).stop().show(100);
+		}).stop().toggle(100);
 	},
 	function(event) // hide
 	{

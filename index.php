@@ -37,7 +37,10 @@
 	</script>
 	
 	<!-- hidden popup box -->
-	<div id="popup">Test</div>
+	<div id="popup">
+		<h3 id='popupTitle'>Popup infobox</h3>
+		<p  id='popupText' >Popup infotext</p>
+	</div>
 	
 	
 <?php

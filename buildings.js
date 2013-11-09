@@ -178,7 +178,7 @@ function createBuildingList()
 			id   : 'buildingIcon' + i,
 			
 			src:   'icons/img' + i + '.png',
-			alt:   buildings[i].name,
+			alt:   buildings[i].name
 			
 		}).appendTo($upg);
 		
@@ -207,7 +207,7 @@ function createBuildingList()
 		}).appendTo($upg).text('0');
 		
 		// enable hovering dialogue
-		hover("#buildingDiv" + i, buildings[i].desc);
+		hover("#buildingDiv" + i, buildings[i].name, buildings[i].desc);
 		
 		// resume any previous count, or set to 0
 		buildings[i].resume();
