@@ -32,10 +32,20 @@ function Building(name, desc, cost, cps)
 	{
 		return this.count * this.cps;
 	}
+	// load from storage
+	this.resume = function()
+	{
+		var count = localStorage.getItem("building" + this.id) || "0";
+		this.count = parseInt(count);
+		this.updateText();
+	}
+	// create one building (of this type)
 	this.build = function()
 	{
 		this.count += 1;
 		this.updateText();
+		// save locally
+		localStorage.setItem("building" + this.id, this.count);
 	}
 	
 	// show/hide building
@@ -199,8 +209,8 @@ function createBuildingList()
 		// enable hovering dialogue
 		hover("#buildingDiv" + i, buildings[i].desc);
 		
-		// set upgrade paragraph text
-		buildings[i].updateText();
+		// resume any previous count, or set to 0
+		buildings[i].resume();
 	}
 	
 	// we can't just create the upgrade event at ready(),
