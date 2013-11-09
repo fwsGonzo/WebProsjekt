@@ -12,6 +12,9 @@ function initStats()
 	// game started date
 	var gameStarted = Date.parse(localStorage.gameStarted) || currentDate;
 	$("#statGameStarted").text(gameStarted);
+	
+	// restore hand clicks
+	updateHandClicks();
 }
 
 // update cps
@@ -47,12 +50,24 @@ function totalHandClick(click)
 	// add clicking power to physically made codelines
 	var c = Number(localStorage.handClick) + click || click;
 	localStorage.handClick = c;
-	$('#HMC').text(formattedNumber(Math.round(c)));
-	totalCodelines(click);
 	
 	// add a 1 to keyboard click counter stat
 	var d = Number(localStorage.mouseClicks) + 1 || 1;
 	localStorage.mouseClicks = d;
+	
+	// FIXME not sure why this is here:
+	totalCodelines(click);
+	
+	// update visuals
+	updateHandClicks();
+}
+
+function updateHandClicks()
+{
+	var c = Number(localStorage.handClick) || 0;
+	$('#HMC').text(formattedNumber(Math.round(c)));
+	
+	var d = Number(localStorage.mouseClicks) || 0;
 	$('#codeClicks').text(formattedNumber(Math.round(d)));
 }
 
