@@ -26,6 +26,8 @@
 	
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript">
 	</script>
+	
+	<link rel="shortcut icon" href="/img/favicon.ico" />
 </head>
 
 <body>

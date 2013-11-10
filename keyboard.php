@@ -8,6 +8,7 @@
 -->
 </canvas>
 <div id="codelinesBox">
+    <img id="clicon" src="img/icon.png" />
     <p>Codelines: </p><pre id="codelines">0</pre>
 </div>
 <div id="cpsBox">
