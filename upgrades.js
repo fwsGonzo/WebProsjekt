@@ -106,13 +106,13 @@ function Upgrade(name, desc, cost, building, req, cps_function)
 			class: 'upgradeIcon',
 			id   : 'upgradeIcon' + this.id,
 			
-			src:   'icons/img' + this.id + '.png',
+			src:   'img/upgrades/upgrade' + this.id + '.png',
 			alt:   this.name
 			
 		}).hide().appendTo($("#upgrades"));
 		
 		// hover info popup
-		hover(this.getElement(), this.name, this.desc);
+		hover(this.getElement(), "Upgrade: " + this.name, this.desc);
 		
 		// click (purchase) event
 		var self = this;
