@@ -152,15 +152,47 @@ function initUpgrades()
 			return base_cps + 2;
 		}
 	));
-	
-	// brogramming (2)
+            
+        // super commenting(1)
+	upgrades.push(
+	new Upgrade(
+		"Commenting freak",
+		"Adding unuseful information to the comments! " +
+		"Increases commenting lines by 5%",
+		20000,
+		1, 2, // requires 2 of building 1 (Comment Standard)
+		
+		// the upgrade function that modifies base cps
+		function(base_cps)
+		{
+			return base_cps * 1.05;
+		}
+	));
+            
+            
+	// Student Lanprogramming (2)
+        upgrades.push(
+                new Upgrade(
+                    "Student Lanparty",
+                    "The students program when they are on a Lan-party all night long! " +
+                    "Increases student codlines by 10%",
+                    2000,
+                    2, 1, // requires 1 of building 2 (Student Programmer)
+            
+                    // the upgrade function that modifies base cps
+                    function(base_cps){
+                        return base_cps * 1.1;
+                    }
+        ));
+            
+	// brogramming (3)
 	upgrades.push(
 	new Upgrade(
 		"Brogramming",
 		"Students learn from each other, further convoluting and diluting the codebase! " +
 		"Increases student codelines by 50%.",
-		2000,
-		2, 1, // requires 1 of building 2 (Student Programmer)
+		20000,
+		2, 10, // requires 1 of building 2 (Student Programmer)
 		
 		// the upgrade function that modifies base cps
 		function(base_cps)
@@ -168,6 +200,9 @@ function initUpgrades()
 			return base_cps * 1.5;
 		}
 	));
+        
+        
+                    
 	
 	// set initial values for upgrades
 	for (var i = 0; i < upgrades.length; i++)
