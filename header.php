@@ -8,12 +8,7 @@
 	<meta name="author" content="Gruppe 7">
 	
 	<title>
-		<?php
-			if (!isset($title))
-				$title = "FIXME: missing title";
-			
-			echo "$title";
-		?>
+		Codelines
 	</title>
 	
 	<link rel="stylesheet" title="Black" href="css/index.css" />
