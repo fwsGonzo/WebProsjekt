@@ -221,3 +221,19 @@ function testUpgrades()
 	}
 }
 
+// a few getters
+function ownedUpgrades()
+{
+	var u = 0;
+	
+	for (var i = 0; i < upgrades.length; i++)
+	{
+		if (upgrades[i].state == 2) u++;
+	}
+	return u;
+}
+function totalUpgrades()
+{
+	return upgrades.length;
+}
+
