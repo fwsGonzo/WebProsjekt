@@ -21,15 +21,19 @@ function Matrix(c)
 		
 		var mat = Array(300).join(0).split('');
 		var ctx = $(self.canvas)[0].getContext('2d');
+		ctx.font = '10pt monospace';
 		
 		self.loop = setInterval(
 		function()
 		{
-			// 'slowly' clear the screen
-			ctx.fillStyle='rgba(0,0,0,.05)';
+			// fill with black based on how much cps we currently have
+			// calculate clear rate
+			var clrate = 1.0 - Math.min(1.0, cps.getCPS() / 1000000);
+			clrate = 0.1 + Math.pow(clrate, 2.5) * 0.5;
+			// fill
+			ctx.fillStyle='rgba(0,0,0,' + clrate + ')';
 			ctx.fillRect(0, 0, w, h);
 			ctx.fillStyle='#0F0';			
-			ctx.font = '10pt monospace';
 			
 			// scatter characters
 			mat.map(
