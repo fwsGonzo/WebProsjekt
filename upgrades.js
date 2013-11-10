@@ -42,6 +42,22 @@ function Upgrade(name, desc, cost, building, req, cps_function)
 	{
 		return buildings[this.building].count >= this.requirement;
 	}
+	
+	// enables upgrades that have just become available
+	this.enableTest = function()
+	{
+		if (this.state == 0)
+		if (this.requirementsMet())
+		{
+			// save state
+			this.state = 1;
+			localStorage.setItem("upgrade" + this.id, this.state);
+			// and show it
+			$(this.getElement()).show();
+		}
+	}
+	
+	// resumes this upgrade (from page refresh etc.)
 	this.resume = function()
 	{
 		// resume previous state, if any
@@ -55,11 +71,13 @@ function Upgrade(name, desc, cost, building, req, cps_function)
 				// if the requirements are immediately met,
 				// just enable the upgrade
 				this.state = 1; // available for purchase
+				localStorage.setItem("upgrade" + this.id, this.state);
+				// and show it
 				$(this.getElement()).show();
 			}
 		}
 		else // for state = 2, the upgrade was previously purchased,
-		{	// so we will just re-purchase it
+		{    // so we will just re-purchase it
 			this.buy();
 		}
 	}
@@ -70,8 +88,11 @@ function Upgrade(name, desc, cost, building, req, cps_function)
 		buildings[this.building].cps = this.getCPS(buildings[this.building].cps);
 		
 		// remove/hide this upgrade from upgrade list
-		this.state = 2;
 		$(this.getElement()).hide();
+		
+		// save state
+		this.state = 2;
+		localStorage.setItem("upgrade" + this.id, this.state);
 		
 		// update cps to reflect change
 		updateCPS();
@@ -116,6 +137,7 @@ function initUpgrades()
 {
 	// create each upgrade manually
 	
+	// xtreme programming (0)
 	upgrades.push(
 	new Upgrade(
 		"Xtreme Programming",
@@ -130,7 +152,23 @@ function initUpgrades()
 		}
 	));
 	
-	// set each upgrades unique id
+	// brogramming (2)
+	upgrades.push(
+	new Upgrade(
+		"Brogramming",
+		"Students learn from each other, further convoluting and diluting the codebase! " +
+		"Increases student codelines by 50%.",
+		2000,
+		2, 1, // requires 1 of building 2 (Student Programmer)
+		
+		// the upgrade function that modifies base cps
+		function(base_cps)
+		{
+			return base_cps * 1.5;
+		}
+	));
+	
+	// set initial values for upgrades
 	for (var i = 0; i < upgrades.length; i++)
 	{
 		upgrades[i].id = i;
@@ -140,27 +178,14 @@ function initUpgrades()
 	}
 }
 
-// load any potentially stored upgrade counts
-function resumeUpgrades()
+// each time player purchases a building, we will check
+// if each upgrade has suddenly become available
+// slightly inefficient O(n), but there are never many upgrades
+function testUpgrades()
 {
-	// FIXME
-}
-
-function applyUpgrades(building, cps)
-{
-	// apply any upgrades that affect 'building',
-	// starting with base cps = cps
-	var c = cps;
-	
-	// then calculate in each upgrade using custom cps function
 	for (var i = 0; i < upgrades.length; i++)
 	{
-		if (upgrades[i].state == 2 && upgrades[i].building == building)
-		{
-			c = upgrades[i].getCPS(c);
-		}
+		upgrades[i].enableTest();
 	}
-	// finally, return total base cps
-	return c;
 }
 
