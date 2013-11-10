@@ -2,6 +2,7 @@
 /*Below is the leftsection*/
 #leftSection
 {
+    min-width: 360px;
     width: 30%;
     font-size: 16px;       
 }

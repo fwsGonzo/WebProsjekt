@@ -2,7 +2,9 @@
 /*Below is the middlesection*/
 #middleSection
 {
+    min-width: 360px;
     width: 30%;
+    z-index: 1;
     color: white;
     border-left: 15px solid;
     border-right: 15px solid;
