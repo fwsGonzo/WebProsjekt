@@ -8,7 +8,9 @@
     color: white;
     border-left: 15px solid;
     border-right: 15px solid;
+    /*background: url('/img/background.png') repeat;*/
     background-color: black;
+    
     /* border image for all browsers except IE */
     border-image: url(icons/border.png) 30 30 round;
     -webkit-border-image: url(icons/border.png) 30 30 round;
@@ -17,6 +19,7 @@
 
 .tab
 {
+    /*background: url('/img/background.png') repeat;*/
     background-color: black;
     text-align: center;
 }
@@ -50,9 +53,11 @@
     background-color: gray;
 }
 
-.stats
+.hbar
 {
-
+	width: 85%;
+	border: 1px solid;
+	color: #002700;
 }
 
 /* Stats */ 
@@ -69,3 +74,4 @@ td
     padding-bottom: 1em;
 }
 /*End of middlesection*/
+

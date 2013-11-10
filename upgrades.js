@@ -141,7 +141,8 @@ function initUpgrades()
 	upgrades.push(
 	new Upgrade(
 		"Xtreme Programming",
-		"Write everything in one go, and never look back",
+		"Write everything in one go, and never look back. " +
+		"Increases programming base cps by 2.",
 		100,
 		0, 1, // requires 1 of building 0 (Programming)
 		

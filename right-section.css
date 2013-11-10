@@ -8,6 +8,12 @@
     
 }
 
+.upgradeIcon
+{
+	width:  40px;
+	height: 40px;
+}
+
 .buildingDiv
 {
     height: 5.0em ;

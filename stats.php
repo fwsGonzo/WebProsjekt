@@ -20,6 +20,8 @@
 			notChosen.style.display="none";
 		}
 	</script>
+	<hr class="hbar" />
+	
 </div>
 
 <script src="stats.js" type="text/javascript">
@@ -61,4 +63,6 @@
 			<td id="HMC">0</td>
 		</tr>
 	</table>
+	<hr class="hbar" />
 </section>
+
