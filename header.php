@@ -10,19 +10,17 @@
 	<title>
 		<?php
 			if (!isset($title))
-			{
-				$title = "FIXME: untitled";
-			}
+				$title = "FIXME: missing title";
 			
 			echo "$title";
 		?>
 	</title>
 	
-	<link rel="stylesheet" id="stylesheet" title="Black" href="index.css" />
+	<link rel="stylesheet" title="Black" href="css/index.css" />
 	
-	<link rel="stylesheet" id="left-section" title="Black" href="left-section.css" />
-	<link rel="stylesheet" id="middle-section" title="Black" href="middle-section.css" />
-	<link rel="stylesheet" id="right-section" title="Black" href="right-section.css" />
+	<link rel="stylesheet" title="Black" href="css/left-section.css" />
+	<link rel="stylesheet" title="Black" href="css/middle-section.css" />
+	<link rel="stylesheet" title="Black" href="css/right-section.css" />
 	
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript">
 	</script>
