@@ -1,6 +1,7 @@
 /**
- * 
- * 
+ * Matrix-effect in canvas
+ * Uses map() to randomize letters as it goes down
+ * Nothing special, but looks ok
  * 
 **/
 
@@ -19,7 +20,13 @@ function Matrix(c)
 		var w = $(this.canvas).attr("width");
 		var h = $(this.canvas).attr("height");
 		
-		var mat = Array(300).join(0).split('');
+		// estimated character size in pixels
+		// (don't really care, as long as its >=)
+		var estsize = 10;
+		// minimum travel distance
+		var mintravel = 100;
+		
+		var mat = Array(w * estsize).join(0).split('');
 		var ctx = $(self.canvas)[0].getContext('2d');
 		ctx.font = '10pt monospace';
 		
@@ -29,7 +36,7 @@ function Matrix(c)
 			// fill with black based on how much cps we currently have
 			// calculate clear rate
 			var clrate = 1.0 - Math.min(1.0, cps.getCPS() / 1000000);
-			clrate = 0.1 + Math.pow(clrate, 2.5) * 0.5;
+			clrate = 0.1 + Math.pow(clrate, 2.5) * 0.4;
 			// fill
 			ctx.fillStyle='rgba(0,0,0,' + clrate + ')';
 			ctx.fillRect(0, 0, w, h);
@@ -40,16 +47,16 @@ function Matrix(c)
 			function(y, index)
 			{
 				var text = String.fromCharCode(97 + Math.random()*26);
-				var x = (index * 10) + 10;
+				var x = index * (estsize + 1);
 				ctx.fillText(text, x, y);
 				
-				if(y > 100 + Math.random() * 1e4)
+				if (y > mintravel + Math.random() * h * estsize)
 				{
 					mat[index] = 0;
 				}
 				else
 				{
-					mat[index] = y + 10;
+					mat[index] = y + estsize;
 				}			
 			});
 			
