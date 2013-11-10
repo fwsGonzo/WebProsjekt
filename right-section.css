@@ -26,18 +26,11 @@
     background-color: rgba(190,190,190,0.25);
 }
 
-.buildingDiv img, .buildingDisabledDiv img
+.buildingDiv img
 {
     float: left;
     padding-top: 2%;
     padding-left: 2%;
-}
-
-.buildingDisabledDiv
-{
-    height: 5.0em ;
-    background: url('img/button2.png') no-repeat;
-    background-size: 100% 100%;
 }
 
 .buildingText

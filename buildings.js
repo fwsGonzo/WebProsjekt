@@ -79,14 +79,7 @@ function Building(name, desc, cost, cps)
 	this.enable = function(toggle)
 	{
 		this.enabled = toggle;
-		if (this.enabled)
-		{
-			$("#buildingDiv" + this.id).attr("class", "buildingDiv");
-		}
-		else
-		{
-			$("#buildingDiv" + this.id).attr("class", "buildingDisabledDiv");
-		}
+		enableBuilding($("#buildingDiv" + this.id), this.enabled);
 	}
 	// update cost & count
 	this.updateText = function()
@@ -207,6 +200,20 @@ function createBuildingList()
 			
 		}).appendTo($upg).text('0');
 		
+		// selected / deselected images
+		$('.buildingDiv')
+		.on('mouseover', function()
+		{
+			// set selected image, if applicable
+			if (buildingEnabled(this))
+			$(this).css('background-image', 'url(img/button_selected.png)');
+		})
+		.on('mouseout', function()
+		{
+			// restore
+			enableBuilding($(this), buildingEnabled(this));
+		});
+		
 		// enable hovering dialogue
 		hover("#buildingDiv" + i, buildings[i].name, buildings[i].desc);
 		
@@ -221,6 +228,33 @@ function createBuildingList()
 	// perform cost test enabling/disabling this building visually
 	// note: put this last, as it may change class attribute
 	updateBuildings();
+}
+
+function enableBuilding(b, en)
+{
+	if (en)
+	{
+		$(b).css('background-image', 'url(img/button.png)');
+	}
+	else
+	{
+		$(b).css('background-image', 'url(img/button_disabled.png)');
+	}
+}
+
+function buildingEnabled(b)
+{
+	// user wants to purchase an upgrade (clicked)
+	// find which upgrade it is
+	var id = Number(b.getAttribute("number"));
+	
+	// find upgrade object, and calculate cost
+	var building = buildings[id];
+	var cost     = building.getCost();
+	
+	// check that the upgrade is is cost range
+	var cl = getCodelines();
+	return (cl >= cost);
 }
 
 function createBuildFunctions()
