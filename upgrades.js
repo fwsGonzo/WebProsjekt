@@ -254,7 +254,7 @@ function initUpgrades()
         }
     ));
     
-	// brogramming (3)
+	// brogramming (2)
 	upgrades.push(
 	new Upgrade(
 		"Brogramming",
@@ -262,6 +262,38 @@ function initUpgrades()
 		"Doubles the number of student codelines.",
 		4000000,
 		2, 50, // requires 50 of building 2 (Student Programmer)
+		
+		// the upgrade function that modifies base cps
+		function(base_cps)
+		{
+			return base_cps * 2.0;
+		}
+	));
+	
+	// more equals faster (3)
+	upgrades.push(
+	new Upgrade(
+		"More equals faster",
+		"Being on a deadline, there was no other option than to add more programmers! " +
+		"Adds 200 base cps to Moving Deadline.",
+		110000,
+		3, 1, // requires 1 of building 3 (Moving Deadline)
+		
+		// the upgrade function that modifies base cps
+		function(base_cps)
+		{
+			return base_cps + 200;
+		}
+	));
+	
+	// looming deadline (3)
+	upgrades.push(
+	new Upgrade(
+		"Looming deadline",
+		"Using copy & paste from both internally and the internet, the deadline can be reached! " +
+		"Further doubles the cps contribution of Moving Deadline.",
+		1000000,
+		3, 25, // requires 25 of building 3 (Moving Deadline)
 		
 		// the upgrade function that modifies base cps
 		function(base_cps)
