@@ -19,6 +19,7 @@
 	<div id="popup">
 		<h3 id='popupTitle'>Popup infobox</h3>
 		<p  id='popupText' >Popup infotext</p>
+		<p  id='popupInfo' >Popup infotext</p>
 	</div>
 	
 <?php

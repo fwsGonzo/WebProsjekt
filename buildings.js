@@ -215,7 +215,10 @@ function createBuildingList()
 		});
 		
 		// enable hovering dialogue
-		hover("#buildingDiv" + i, buildings[i].name, buildings[i].desc);
+		hover("#buildingDiv" + i, 
+			buildings[i].name, 
+			buildings[i].desc,
+			"Base CPS: " + formattedNumber(buildings[i].cps));
 		
 		// resume any previous count, or set to 0
 		buildings[i].resume();

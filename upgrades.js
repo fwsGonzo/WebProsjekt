@@ -122,7 +122,10 @@ function Upgrade(name, desc, cost, building, req, cps_function)
 		this.createSelectionEvents();
 		
 		// hover info popup
-		hover(this.getElement(), "Upgrade: " + this.name, this.desc);
+		hover(this.getElement(), 
+			this.name, 
+			this.desc,
+			"Cost: " + formattedNumber(this.cost));
 		
 		// click (purchase) event
 		var self = this;
@@ -211,10 +214,10 @@ function initUpgrades()
 	upgrades.push(
 	new Upgrade(
 		"OCD Commenting",
-		"Extra-redundant information added everywhere! " +
-		"Increases comment lines by 50%",
+		"Extra-redundant information added everywhere. Comment box heaven! " +
+		"Increases comment lines by 50%.",
 		2000,
-		1, 10, // requires 10 of building 1 (Comment Standard)
+		1, 1, // requires 1 of building 1 (Comment Standard)
 		
 		// the upgrade function that modifies base cps
 		function(base_cps)

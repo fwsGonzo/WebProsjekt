@@ -80,3 +80,10 @@ p
     color: black;
 }
 
+#popupInfo
+{
+	font-size: 0.75em;
+	font-style: italic;
+	margin: 0px;
+}
+

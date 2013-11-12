@@ -4,13 +4,14 @@
  * 
 **/
 
-function hover(element, title, text)
+function hover(element, title, text, info)
 {
 	$(element).hover(
 	function(event) // show
 	{
 		$("#popupTitle").text(title);
 		$("#popupText").text(text);
+		$("#popupInfo").text(info);
 		$("#popup").css(
 		{
 			left: event.pageX + 1,
