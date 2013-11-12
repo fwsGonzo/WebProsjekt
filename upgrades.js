@@ -106,10 +106,20 @@ function Upgrade(name, desc, cost, building, req, cps_function)
 			class: 'upgradeIcon',
 			id   : 'upgradeIcon' + this.id,
 			
-			src:   'img/upgrades/upgrade' + this.id + '.png',
+			src:   '/img/upgrades/frame.png',
 			alt:   this.name
 			
 		}).hide().appendTo($("#upgrades"));
+		
+		// find the number of this upgrade and use it to form background image source
+		var css_prefix = this.building+1;
+		var css_postfix = upgradeCount(this.building);
+		
+		$(this.getElement()).css('background-image', 
+			'url(/img/upgrades/upgrade' + css_prefix + '_' + css_postfix + ".png)");
+		
+		// create selection hover events
+		this.createSelectionEvents();
 		
 		// hover info popup
 		hover(this.getElement(), "Upgrade: " + this.name, this.desc);
@@ -131,6 +141,34 @@ function Upgrade(name, desc, cost, building, req, cps_function)
 		});
 		
 	}
+	// events for hovering selection
+	this.createSelectionEvents = function()
+	{
+		var self = this.getElement();
+		
+		// selected / deselected images
+		$(self)
+		.on('mouseover', function()
+		{
+			$(self).attr("src", "img/upgrades/frame_selected.png");
+		})
+		.on('mouseout', function()
+		{
+			$(self).attr("src", "img/upgrades/frame.png");
+		});
+	}
+}
+
+var upgradeCounter = [];
+
+function upgradeCount(building)
+{
+	// add zeroes to get to insertion point
+	while (upgradeCounter.length <= building)
+		upgradeCounter.push(0);
+	
+	// !! return, then add to count
+	return upgradeCounter[building]++;
 }
 
 function initUpgrades()
@@ -149,7 +187,23 @@ function initUpgrades()
 		// the upgrade function that modifies base cps
 		function(base_cps)
 		{
-			return base_cps + 2;
+			return base_cps + 1;
+		}
+	));
+	
+	// late-night programming (0)
+	upgrades.push(
+	new Upgrade(
+		"Late-night Programming",
+		"Load up on redbull, and forget everything else but the code. " +
+		"Increases programming base cps further by 8.",
+		1000,
+		0, 50, // requires 50 of building 0 (Programming)
+		
+		// the upgrade function that modifies base cps
+		function(base_cps)
+		{
+			return base_cps + 8;
 		}
 	));
 	
@@ -160,12 +214,28 @@ function initUpgrades()
 		"Extra-redundant information added everywhere! " +
 		"Increases comment lines by 50%",
 		2000,
-		1, 2, // requires 2 of building 1 (Comment Standard)
+		1, 10, // requires 10 of building 1 (Comment Standard)
 		
 		// the upgrade function that modifies base cps
 		function(base_cps)
 		{
 			return base_cps * 1.5;
+		}
+	));
+	
+    // Corporate commenting guidelines (1)
+	upgrades.push(
+	new Upgrade(
+		"Corporate Guidelines",
+		"The corporate commenting guidelines originated from good intentions. " +
+		"Doubles the number of commented lines.",
+		20000,
+		1, 50, // requires 50 of building 1 (Comment Standard)
+		
+		// the upgrade function that modifies base cps
+		function(base_cps)
+		{
+			return base_cps * 2.0;
 		}
 	));
 	
@@ -189,14 +259,14 @@ function initUpgrades()
 	new Upgrade(
 		"Brogramming",
 		"Students learn from each other, further convoluting and diluting the codebase! " +
-		"Increases student codelines by 50%.",
-		20000,
-		2, 10, // requires 1 of building 2 (Student Programmer)
+		"Doubles the number of student codelines.",
+		4000000,
+		2, 50, // requires 50 of building 2 (Student Programmer)
 		
 		// the upgrade function that modifies base cps
 		function(base_cps)
 		{
-			return base_cps * 1.5;
+			return base_cps * 2.0;
 		}
 	));
 	
