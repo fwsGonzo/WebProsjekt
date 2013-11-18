@@ -12,9 +12,9 @@
     background-color: black;
     
     /* border image for all browsers except IE */
-    border-image: url(/img/border.png) 30 30 round;
-    -webkit-border-image: url(/img/border.png) 30 30 round;
-    -o-border-image: url(/img/border.png) 30 30 round; 
+    border-image: url(../img/border.png) 30 30 round;
+    -webkit-border-image: url(../img/border.png) 30 30 round;
+    -o-border-image: url(../img/border.png) 30 30 round; 
 }
 
 .tab
