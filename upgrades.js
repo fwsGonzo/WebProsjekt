@@ -106,7 +106,7 @@ function Upgrade(name, desc, cost, building, req, cps_function)
 			class: 'upgradeIcon',
 			id   : 'upgradeIcon' + this.id,
 			
-			src:   '/img/upgrades/frame.png',
+			src:   "img/upgrades/frame.png",
 			alt:   this.name
 			
 		}).hide().appendTo($("#upgrades"));
