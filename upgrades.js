@@ -116,7 +116,7 @@ function Upgrade(name, desc, cost, building, req, cps_function)
 		var css_postfix = upgradeCount(this.building);
 		
 		$(this.getElement()).css('background-image', 
-			'url(/img/upgrades/upgrade' + css_prefix + '_' + css_postfix + ".png)");
+			'url(img/upgrades/upgrade' + css_prefix + '_' + css_postfix + ".png)");
 		
 		// create selection hover events
 		this.createSelectionEvents();

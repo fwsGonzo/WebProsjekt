@@ -10,7 +10,7 @@
 
 .upgradeIcon
 {
-    background: url('/img/upgrades/frame.png') no-repeat;
+    background: url('~/img/upgrades/frame.png') no-repeat;
     background-size: 100% 100%;
 	width:  40px;
 	height: 40px;
@@ -19,7 +19,7 @@
 .buildingDiv
 {
     height: 5.0em ;
-    background: url('/img/button.png') no-repeat;
+    background: url('~/img/button.png') no-repeat;
     background-size: 100% 100%;
 }
 
