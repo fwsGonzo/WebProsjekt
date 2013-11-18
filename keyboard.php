@@ -17,8 +17,10 @@
     <p>clickpower: </p><pre id="clickpower">0</pre>
 </div>
 
-<img id="keyboard" src="img/keyboard.png" alt="~ Keyboard ~" />
-
+<div>
+    <img id="keyboard" src="img/keyboard.png" alt="~ Keyboard ~" />
+</div>
+    
 <script src="canvas.js" type="text/javascript">
 </script>
 <script src="keyboard.js" type="text/javascript">
