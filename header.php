@@ -19,11 +19,14 @@
 	
 	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript">
 	</script>
+        <script src="http://fancybox.net/js/fancybox-1.3.4/jquery.fancybox-1.3.4.pack.js"></script>
 	
 	<link rel="shortcut icon" href="/img/favicon.ico" />
 </head>
 
 <body>
+    
+    
 	<section id="hovedside">
 		
 		<header class="inparagraph">
@@ -34,4 +37,7 @@
 		
 		
 		<article id="subframe" class="coolframe">
-		
+    
+    <div id="MorsomGif">
+        <a id="maniac" href="img/maniac-typing.gif"></a>
+    </div>
