@@ -26,6 +26,8 @@
 
 <script src="stats.js" type="text/javascript">
 </script>
+<script src="easteregg.js" type="text/javascript">
+</script>
 
 <section id="stats">
     <h2 id="statsTitle">Statistics</h2>

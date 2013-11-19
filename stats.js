@@ -21,6 +21,7 @@ function initStats()
 function updateStatsCPS(cps)
 {
 	$('#statCPS').text(formattedNumber(Math.round(cps * 100) / 100));
+	leetProgrammer(cps);
 }
 
 // update codelines
