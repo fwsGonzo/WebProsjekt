@@ -38,6 +38,3 @@
 		
 		<article id="subframe" class="coolframe">
     
-    <div id="MorsomGif">
-        <a id="maniac" href="img/maniac-typing.gif"></a>
-    </div>

@@ -144,6 +144,7 @@ function Upgrade(name, desc, cost, building, req, cps_function)
 		});
 		
 	}
+        
 	// events for hovering selection
 	this.createSelectionEvents = function()
 	{
