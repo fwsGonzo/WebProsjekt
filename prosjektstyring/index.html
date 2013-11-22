@@ -2,24 +2,339 @@
 <html>
 <head>
     <title>
-		Prosjektstyring
-	</title>
+	Prosjektstyring
+    </title>
 </head>
 <body>
+    <div class="content">
     <header>
-		<h1>Page title</h1>
+	<h1>Sluttrapport</h1>
     </header>
-    <nav>
-		<!-- Navigation -->
-    </nav>  
-    <section id="intro">
-		<!-- Introduction -->
-    </section>
-    <section>
-		<!-- Main content area -->
-    </section>
+
+        <h2 id="Innledning">Innledning</h2>
+        
+        <p>
+            Denne sluttrapporten omhandler det arbeidet som vi i gruppe 7 har lagt ned i løpet av prosjektperioden.
+            Prosjektet er utført høsten 2013 ved Høyskolen i Oslo og Akershus.
+            Gruppen består av fire personer, Alf-Andre Walla, Mateusz Zych, Svein Gunnar Fagerheim og Tore Angell Petersen.
+            Der samtlige studerer Bachelor i ingeniørfag data.
+            Denne sluttrapporten vil det bli beskrevet: Hva som var våre forventninger.
+            Hvordan vi tok tak i prosjektet. Hvordan vi jobbet med prosjektet. Hva som ble brukt for å oppnå ønsket resultat. 
+            Hva som ble implementert, samt med beskrivelse av sluttproduktet. Til slutt kommer det refleksjoner om prosjektgjennomføringen.
+        </p>
+        
+        <h2 id="ValgAvTema">Valg Av Tema</h2>
+        <p>
+            Tema til vårt prosjekt var det ikke veldig mye spekulasjoner om. Det var ganske bestemt på forhånd hva er det vi skulle lage. 
+            En av gruppas medlemmer kom med prosjekt idéen før prosjektet kom i gang. Idéen var å lage noe lignende til «coockie clicker» spillet,
+            bare med egen idé for tema. Alle likte ideen så vi bestemte oss å gå for den.
+            Da prosjektet kom i gang satt vi oss ned for å planlegge prosjektets fremgang. Der ble vi enige om at siden vi går data linje, 
+            så kan vi lage noe data relatert. Da kom idéen fra en av gruppas medlemmer om å lage det spille med tema knyttet mot programmering. 
+            Altså om å få flest mulig kodelinjer. Alle likte idéen og vi begynte å jobbe seg mot denne idéen.
+        </p>
+        
+        <h2 id="UseCase">Use Case</h2>
+        <section>
+        <b>
+            <i>
+                Brukeren skal kunne trykke på en knapp = 1 kodelinje * faktor, dette fører til at en kodelinje-teller økes for hvert klikk. 
+                Dette tallet øker over tid ettersom man oppgraderer og kjøper ting som øker kodelinjer / sekund.
+            </i>
+        </b>
+        <p>
+            Ved å klikke på et keyboard som ligger oppå en Matrix bakgrunn kan spilleren øke antall linjer koder som har blitt skrevet. 
+            I begynnelsen av spillet vil det kun være mulig å få en linje med kode for hvert klikk. Etterhvert som man får kjøpt flere bygninger
+            i spillet så vil det så vil antallet kodelinjer generert ved hvert klikk øke. Det er ingen grense på hvor mange kodelinjer som 
+            genereres for hvert klikk så det er fullt mulig å for eksempel generere en million linjer med koder for hver klikk, men det vil ta tid å komme så langt.
+        </p>
+        </section>
+        
+        <section>
+            <b>
+                <i>
+                    Skal kunne bruke antall kodelinjer til å øke automatisk produksjon av kodelinjer.
+                </i>
+            </b>
+            <p>
+                Kodelinjene man genererer kan man bruke til å kjøpe programmerere og andre ting som vil generere kodelinjer automatisk slik at 
+                spilleren ikke trenger å klikke på tastaturet hele tiden. Den koden som blir generert automatisk vil bli brukt til å kjøpe
+                flere ting som vil øke antall linjer per sekund (cps) enda mer.
+            </p>
+        </section>
+        
+        <section>
+            <b>
+                <i>
+                    Skal kunne se statistikk over hva som er bygd, hvor mange kodelinjer brukeren har “skrevet,” og mange andre ting.
+                </i>
+            </b>
+            <p>
+                Statistikken viser oversikt over dato for når spillet er startet. Hvor mange kodelinjer som er blitt skrevet totalt for alle spill,
+                hvor mange kodelinjer som er blitt skrevet for dette spillet og hvor mange kodelinjer som er tilgjengelig for å kjøpe oppgraderinger med.
+                Statistikken viser også hvor mange kodelinjer man får hvert sekund av oppgraderingene man har kjøpt som kaller cps som står for codelines per second.
+                Det siste som statistikken viser er hvor mange museklikk man har brukt på keyboardet og hvor mange kodelinjer dette har generert.
+            </p>
+        </section>
+        
+        <section>
+            <b>
+                <i>
+                    Skal finnes en meny hvor brukeren kan resete spillet ved å trykke på en knapp
+                </i>
+            </b>
+            <p>
+                Det er blitt implementert to former for reset:<br>
+                <b>Soft reset</b> som sletter det nåværende spillet. Dvs. alt av ‘buildings’, ‘upgrades’, ‘codelines’, ‘clickpower’,
+                ‘cps (codelines per secods)’ og ‘codelines (this game)’ blir nullstilt. Slik at det som gjenstår er ‘codelines (all time)’.<br>
+                Mens <b>hard reset</b> sletter spillet pluss absolutt alt statistikk som er generert.
+
+            </p>
+        </section>
+        
+        <section>
+            <b>
+                <i>
+                    Skal finnes en meny hvor brukeren kan lagre spillet ved å trykke på en knapp
+                </i>
+            </b>
+            <p>
+                Dette har ikke blitt implementert fordi det viste seg at denne knappen er unødvendig. 
+                Siden nettstedet ble programmert slit at spillet blir lagret underveis hele tiden i realtime.
+            </p>
+        </section>
+        
+        <section>
+            <b>
+                <i>
+                    Skal kunne finne et easter-egg, forhåpentlig på en slik måte at hvem som helst skal kunne finne det hvis man leter.
+                </i>
+            </b>
+            <p>
+                Vi la til et morsomt easter-egg som passer til vår «nerdete» idé. Altså en gif av selveste Jim Carrey som pøser på tastaturet med ‘codelines’.
+                Så vis du spiller litt og har kommet deg til akkurat 1337 ‘cps’. Så dukker Jim Carrey gif’ en opp og du får 500 000 ‘codelines’ i bonus.
+            </p>
+        </section>
+        
+        <h2 id="Tidslinje">Tidslinje</h2>
+        <p>
+            <b>Uke 44</b><br>
+            Lage skjelettet til siden, og samtidig bestemme oss for et endelig design. Planlegging.<br>
+
+            <b>Uke 45</b><br>
+            Ferdig med planlegging. Implementasjon av spillet. Fokus på opplevelse og funksjonalitet.<br>
+
+            <b>Uke 46</b><br>
+            Begynne å skrive rapporten, fordele hvem som skal skrive hva.
+            Skal være ferdig med det meste av spillet i løpet av denne uken. Polering av funksjonalitet og brukeropplevelse.<br>
+
+            <b>Uke 47</b><br>
+            Ferdig med spillet og rapporten.
+        </p>
+  
+        <h2 id="Evaluering">Evaluering</h2>
+        
+        <h3 id="Metoder">Metoder</h3>
+        <p>
+            Vi begynte med en planleggingsperiode hvor vi fant ut hva som skulle være med. Deretter begynte vi å jobbe med hver vår del. 
+            Vi hadde ikke en formel gruppeleder som delegerte oppgaver. I stedet har det vært opp til den enkelte å finne ut 
+            hvilket arbeid som gjenstår, og ta tak i dette. Hvis det arbeidet man tok tak i ville ta lang tid så meldte man på Skype 
+            hva man jobbet med slik at det ikke ble dobbeltarbeid. Hvis det var noen som slet med å finne arbeid så fikk dem hjelp til dette.
+            Ettersom alle fikk sin oppgave, så jobbet de med det til de ble ferdig. Alt mellom arbeidet ble lastet opp på Github. 
+            Slik alt alle har tilgang til enhver endring som ble gjort i prosjektet.
+            Og hvis noe var uklart teknisk så har internett gitt oss mye på jakt etter informasjon og hjelp. 
+            Spesielt gjelder dette når det er ting som vi ikke har kunnet fra før, og som vi har hatt behov for å lære oss.
+        </p>
+        
+        <h3 id="Verktøy">Verktøy</h3>
+        <p>
+            Hver av oss har brukt det verktøyet de er mest vant til. Til sammen så har vi brukt Notepad++/gedit/NetBeans til å skrive kode.
+            Og Git til å holde styr på versjon kontroll av koden. Der repoet ligger privat på Github, som er tilgjengelig for alle gruppemedlemmer.
+            Disse har funket bra for oss, siden alt ble mellomlagret både lokalt og på Github (etter commits). 
+            Så ingenting av koden gikk tapt noen gang.  Altså disse verktøyene har funket utmerket for oss i detter prosjektet.
+        </p>
+        
+        <h3 id="Teknologier">Teknologier</h3>
+        <p>
+            Fra starten av prosjektet hadde vi en klar idé for hva er det vi har lyst å lage. 
+            Derfor hadde vi også god oversikt over hvilke teknologier vi skulle bruke. 
+            Selvfølgelig måtte vi bruke HTML5 og CSS for det er det som er hoved tema i faget. 
+            Men for å oppnå det idéen vår innebar så måtte vi i tillegg ha med PHP, JavaScript og JQuery.
+        </p>
+        
+        <h4 id="HTML5">HTML5</h4>
+        <p>
+            Vi brukte den nyeste standarden av HTML for å lage strukturen til spillet. Der vi brukte div tagger for å holde orden på elementer.
+        </p>
+        
+        <h4 id="CSS">CSS</h4>
+        <p>
+            Nettstedet benytter seg selvfølgelig av CSS, for å gi siden en passende til temaet design. 
+            Vår CSS struktur består av fire CSS-filer (Se lenger ned under ‘Struktur’). 
+            Dette ble gjort slik for at det skal være mer oversiktlig og for å holde en god struktur på koden. 
+            Hver CSS-fil har ansvar for sin den av siden.
+        </p>
+        
+        <h4 id="PHP">PHP</h4>
+        <p>
+            PHP har vi for det meste brukt for å sette sammen siden. Altså for å ‘include’ de forskjellige php filene sammen. 
+            Samt for å reportere eventuelle php feilene.
+        </p>
+        
+        <h4 id="JavaScript">JavaScript</h4>
+        <p>
+            Alt funksjonalitet på siden er JavaScript basert. 
+            Dette har vi brukt for at alt spillet skal skje på klient siden og ikke på serveren.
+        </p>
+        
+        <h4 id="JQuery">JQuery</h4>
+        <p>
+            JQuery har vi brukt for å eklere kunne ha få tatt tak i forskjellige html elementene i JavaScript.
+        </p>
+        
+        <h3 id="Struktur">Struktur</h3>
+        <table>
+            <tr>
+                <th>
+                    JavaScript
+                </th>
+                <th>
+                    PHP
+                </th>
+                <th>
+                    CSS
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    buildings.js<br>
+                    canvas.js<br>
+                    csp.js<br>
+                    hover.js<br>
+                    init.js<br>
+                    keyboard.js<br>
+                    stats.js<br>
+                    upgrades.js<br>
+                    easteregg.js
+                </td>
+                <td>
+                    header.php<br>
+                    index.php<br>
+                    page-main.php<br>
+                    keyboard.php<br>
+                    stats.php<br>
+                    menu.php<br>
+                    upgades.php
+                </td>
+                <td>
+                    index.css<br>
+                    left-section.css<br>
+                    middle-section.css<br>
+                    rigth-section.css
+                </td>
+            </tr>
+        </table>
+        
+        <h3 id="HvaFungerte">Hva Fungerte</h3>
+        <p>
+            Mye tid ble spart ved å bruke JQuery. Den øker livskvaliteten til enhver JS programmerer. ;)
+            Fant ut at å bruke kompositt ikoner sparte mye tid etter implementasjonen var gjennomført, 
+            for man slapp å lage samme ikonet der det var ‘selected’ og ‘disabled’. 
+            I stedet ble bare selve ramme-bildet laget i normal, selected, disabled versjoner, 
+            og dermed holdt det å lage 1 versjon av alle ikoner.
+            Prøvde å fokusere på klasser og medlemsfunksjoner i enkelte tilfeller i JS-delen. 
+            Det fungerte fint og fikk koden til å være effektiv og lesbar.
+        </p>
+        
+        <h3 id="Problemer">Problemer</h3>
+        <p>
+            Der var noen problemer med å få knapper og slikt til å kunne highlightes med andre bilder via hover, 
+            når man i enkelte tilfeller også skulle disable knappene. Samtidig var noen knapper kompositter der
+            bakgrunnen var selve ikonet, og der var en ramme i en div foran slik at grafikk lett kunne gjenbrukes.
+            Hadde problemer med å få en objekt-instans inn i eventer, men Google forklarte at alle lokale variabler
+            som er definert i samme funksjon som definerer eventen vil være tilgjengelig når eventen avfyres. 
+            Dermed var det bare å skrive var self = this; også var man i mål.
+        </p>
+        
+        <h3 id="Tidsbruk">Tidsbruk</h3>
+        <p>
+            <b>Design</b><br>
+            Siden alle på gruppa er mer kode interessert enn design interessert, 
+            så førte det til at vi måtte bruke en god del til på dette. Design av siden var det vanskelig å bestemme. 
+            Til slutt ble det at vi gikk med programmering design siden prosjektet vårt handlet om dette. 
+            Da ble en av gruppas medlemmer inspirert av “matrix” -filmen han så i barndommen. 
+            Derfor ble det svart-grønn desing, som passet veldig bra til temaet. 
+            Men forstatt, selv om det var bestemt. Så var det vanskelig å få det til å se bra ut. 
+            Spesielt når det gjaldt knappene på siden. Der gikk det meste av design jobb tiden. 
+        </p>
+        
+        <h2 id="Refleksjoner">Refleksjoner</h2>
+        <p>
+            Møtte ingen utfordringer. Ingen timeplan eller estimater sprakk. Tidslinje evaluering:
+            Denne tidslinjen har vist seg å fungere veldig bra. Vi hold oss perfekt overens med planen!<br><br>
+            
+            Når vi ser tilbake på valgene vi har gjort i løpet av prosjektet så vi kan med sikkerhet 
+            konkludere at vi har foretatt de riktige valgene ovenfor tema, innhold og funksjoner på nettsiden. 
+            Vi føler vi har klart å leve opp til de forventningene vi satte oss selv da vi startet og føler vi 
+            har vært realistiske ved de målene vi har satt med tanke på hvilket faglig nivå vi har 
+            vært på etter hvert som tiden har gått. Vi er også tilfreds med løsningene vi har foretatt for å fylle 
+            de kravene som er pensum. Ambisjonsnivået vårt lå ikke for lavt for kompleksiteten på nettstedet
+            vårt er over pensums forventninger. Vi siktet veldig høyt og syns vi nådde målet godt ved hard og konsentrert arbeid.  
+        </p>
+        
+        <h2 id="Kilder">Kilder</h2>
+        
+        <p>Kilder til originale bilder som ble brukt til ‘buildings’ på siden:</p>
+        <ul>
+            <li><a href="http://openclipart.org/image/50px/svg_to_png/172702/computer-worker.png">img0</a></li>
+            <li><a href="http://2shirt.org/wp/wp-content/uploads/2013/05/No-Comment-HTML.png">img1</a></li>
+            <li><a href="http://niezalezna.pl/uploads/foto/2011/12/czapka_student_magister.jpg">img2</a></li>
+            <li><a href="http://d24w6bsrhbeh9d.cloudfront.net/photo/6818802_fbthumbnail_v3.jpg">img3</a></li>
+            <li><a href="http://bybaxter.wpengine.com/wp-content/uploads/2013/01/optkeyboard.png">img4</a></li>
+            <li><a href="http://www.creepfilm.com/themes/creepn/images/Creep-logo.png">img5</a></li>
+            <li><a href="http://upload.wikimedia.org/wikipedia/en/1/12/The_creative_assembly-logo.png">img6</a></li>
+            <li><a href="http://openclipart.org/image/50px/svg_to_png/35269/preferences-desktop-keyboard-shortcuts.png">img7</a></li>
+            <li><a href="https://www.novec.com/About_NOVEC/images/US-Government-Clip-Art.JPG">img8</a></li>
+        </ul>
+        
+        <p>Border bilde som skiller de forskjellige delene på siden:</p>
+        <ul>
+            <li><a href="http://visenri.users.sourceforge.net/images/matrix-01.gif">border</a></li>
+        </ul>
+        
+        <p>Easter-egg gif:</p>
+        <ul>
+            <li><a href="http://media3.giphy.com/media/bAplZhiLAsNnG/giphy.gif">leetPorgrammer <i>(Jim Carrey)</i></a></li>
+        </ul>
+    </div>
+    
     <aside>
-		<!-- Sidebar -->
+        <ul>
+            <li><a href="#Innledning">Innledning</a></li>
+            <li><a href="#ValgAvTema">Valg av tema</a></li>
+            <li><a href="#UseCase">Use Case</a></li>
+            <li><a href="#Tidslinje">Tidslinje</a></li>
+            <li><a href="#Evaluering">Evaluering</a>
+                <ul>
+                    <li><a href="#Metoder">Metoder</a></li>
+                    <li><a href="#Verktøy">Verktøy</a></li>
+                    <li><a href="#Teknologier">Teknologier</a>
+                        <ul>
+                            <li><a href="#HTML5">HTML5</a></li>
+                            <li><a href="#CSS">CSS</a></li>
+                            <li><a href="#PHP">PHP</a></li>
+                            <li><a href="#JavaScript">JavaScript</a></li>
+                            <li><a href="#JQuery">JQuery</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Struktur">Struktur</a></li>
+                    <li><a href="#HvaFungerte">Hva fungerte</a></li>
+                    <li><a href="#Problemer">Problemer</a></li>
+                    <li><a href="#Tidsbruk">Tidsbruk</a></li>
+                </ul>
+            </li>
+            <li><a href="#Refleksjoner">Refleksjoner</a></li>
+            <li><a href="#Kilder">Kilder</a></li>
+        </ul>
     </aside>
     <footer>
 		<!-- Footer -->
