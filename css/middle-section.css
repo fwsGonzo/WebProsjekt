@@ -6,15 +6,16 @@
     width: 30%;
     z-index: 1;
     color: white;
-    border-left: 15px solid;
-    border-right: 15px solid;
+    border-left: 15px solid black;
+    border-right: 15px solid black;
     /*background: url('/img/background.png') repeat;*/
     background-color: black;
+    font-family: verdana;
     
-    /* border image for all browsers except IE */
+    /* border image for all browsers except IE 
     border-image: url(../img/border.png) 30 30 round;
     -webkit-border-image: url(../img/border.png) 30 30 round;
-    -o-border-image: url(../img/border.png) 30 30 round; 
+    -o-border-image: url(../img/border.png) 30 30 round; */ 
 }
 
 .tab
