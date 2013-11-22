@@ -78,5 +78,27 @@ td
     padding-right: 1em; 
     padding-bottom: 1em;
 }
+
+/* achievements */ 
+/*#achievement*/
+#achievement
+{
+	margin-left:15px;
+}
+
+.achievementDiv
+{
+	position: relative;
+    float: left;
+    display: inline-block;
+	margin-left: 5px;
+}
+
+.achievementPic
+{
+	opacity: 0.2;
+}
+
+
 /*End of middlesection*/
 

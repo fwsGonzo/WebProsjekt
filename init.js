@@ -6,6 +6,9 @@
 
 $(document).ready( function()
 {
+	// initialize achievments
+	achievmentInit();
+
 	// the keyboard we click on to gain codelines manually
 	// from keyboard.js:
 	initKeyboard();
@@ -24,5 +27,6 @@ $(document).ready( function()
 	
 	// initialize some stats strings
 	initStats();
+
 });
 
