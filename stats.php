@@ -32,24 +32,24 @@
 <section id="stats">
     <h2 id="statsTitle">Statistics</h2>
 	<table>
-		<tr>
+	<!--	<tr>
 			<td>Game started:</td>
 			<td id="statGameStarted">0</td>
 		</tr>
 		<tr>
 			<td>Session started:</td>
 			<td id="statSessionStarted">0</td>
-		</tr>
+		</tr> -->
 		<tr>
 			<td>Codelines:</td>
 			<td id="statCodelines">0</td>
 		</tr>
 		<tr>
-			<td>Total codelines (this game):</td>
+			<td>Total codelines<br>(this game):</td>
 			<td id="codelinesThisGame">0</td>
 		</tr>
 		<tr>
-			<td>Total codelines (all time):</td>
+			<td>Total codelines<br>(all time):</td>
 			<td id="codelinesAllTime">0</td>
 		</tr>
 		<tr>
