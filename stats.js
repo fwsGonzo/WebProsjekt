@@ -1,4 +1,4 @@
-﻿/**
+/**
  * For stat-page and menu-page
  *
 **/

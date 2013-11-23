@@ -165,16 +165,6 @@ function createBuildingList()
 			
 		}).appendTo('#buildings');
 		
-		// add building icon
-		$('<img>',
-		{
-			class: 'buildingIcon',
-			id   : 'buildingIcon' + i,
-			
-			src:   'icons/img' + i + '.png',
-			alt:   buildings[i].name
-			
-		}).appendTo($upg);
 		
 		// add text caption
 		$('<p>',
@@ -200,13 +190,15 @@ function createBuildingList()
 			
 		}).appendTo($upg).text('0');
 		
+		$upg.wrap('<a href="javascript:build('+i+')"><a>');
 		// selected / deselected images
 		$('.buildingDiv')
 		.on('mouseover', function()
 		{
 			// set selected image, if applicable
 			if (buildingEnabled(this))
-			$(this).css('background-image', 'url(img/button_selected.png)');
+			
+                        $(this).css('background-image', 'url(img/button_selected.png)');
 		})
 		.on('mouseout', function()
 		{
@@ -226,7 +218,7 @@ function createBuildingList()
 	
 	// we can't just create the upgrade event at ready(),
 	// we need to explicitly create it after we have created all the elements
-	createBuildFunctions();
+
 	
 	// perform cost test enabling/disabling this building visually
 	// note: put this last, as it may change class attribute
@@ -237,11 +229,15 @@ function enableBuilding(b, en)
 {
 	if (en)
 	{
-		$(b).css('background-image', 'url(img/button.png)');
+            //active building
+		
+               $(b).css('background-image', 'url(img/button.png)');
 	}
 	else
 	{
-		$(b).css('background-image', 'url(img/button_disabled.png)');
+            //non active building
+		
+                $(b).css('background-image', 'url(img/button_disabled.png)');
 	}
 }
 
@@ -260,16 +256,8 @@ function buildingEnabled(b)
 	return (cl >= cost);
 }
 
-function createBuildFunctions()
+function build(id)
 {
-	// we don't need to create unique functions for each building
-	// since each building knows its own id
-	$(".buildingDiv").click( function()
-	{
-		// user wants to purchase an upgrade (clicked)
-		// find which upgrade it is
-		var id = Number(this.getAttribute("number"));
-		
 		// find upgrade object, and calculate cost
 		var building = buildings[id];
 		var cost     = building.getCost();
@@ -288,7 +276,6 @@ function createBuildFunctions()
 		
 		// update cps on keyboard section
 		updateCPS();
-	});
 }
 
 // used from setCodelines, as buildings could be enabled/disabled

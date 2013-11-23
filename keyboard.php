@@ -8,13 +8,13 @@
 -->
 </canvas>
 <div id="codelinesBox">
-    <p>Codelines: </p><pre id="codelines">0</pre>
+    <p>Codelines </p><pre id="codelines">0</pre>
 </div>
 <div id="cpsBox">
-    <p>cps:       </p><pre id="cps">0</pre>
+    <p>CPS       </p><pre id="cps">0</pre>
 </div>
 <div id="clickpowerBox">
-    <p>clickpower: </p><pre id="clickpower">0</pre>
+    <p>Clickpower </p><pre id="clickpower">0</pre>
 </div>
 
 <div>

@@ -2,9 +2,12 @@
 /*Below is the leftsection*/
 #leftSection
 {
-    min-width: 360px;
+    min-width: 200px;
     width: 30%;
-    font-size: 16px;       
+    font-size: 16px;    
+	font-family:verdana;
+	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    	
 }
 
 #leftSection p
@@ -26,25 +29,29 @@
 /*Positioning of the elements above the matrix*/
 #codelinesBox, #cpsBox, #clickpowerBox
 {
-    background-color: rgba(0,0,0,0.75);
     z-index: 2;
     position: absolute;
     text-align: center;
     width: 97%;
-    min-height: 60px;
-    height: 10%;
     left: 3%;
 }
 
 /*The three counters*/
 #codelines, #cps, #clickpower
 {
-    color: #55AA55;
+    color: green;
+	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    font-size:1.5em;
+	top: -0.8em;
+	position:relative;
+	
+	
 }
 
 #codelinesBox
 {
     top: 80px;
+	
 }
 
 #cpsBox
@@ -60,8 +67,8 @@
 #keyboard
 {
     width: 80%;
-    top: 50%; 
-    left: 5%;
+    top: 400px; 
+    left: 8%;
     position: absolute;
     z-index: 3;
 }

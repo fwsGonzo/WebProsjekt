@@ -1,23 +1,35 @@
 <div class="tab">
-	<p id="statsTab" onclick="toggleTab(1)">Stats</p>
-	<p id="menuTab" onclick="toggleTab(2)">Menu</p>
+	<a href="javascript:toggleTab(1)"><p class="statsTab">Stats</p></a>
+	<a href="javascript:toggleTab(2)"><p class="statsTab">Menu</p></a>
+        <a href="javascript:toggleTab(3)"><p class="statsTab">Help</p></a>
 	<script>
 		function toggleTab(i)
 		{
 			var chosen;
 			var notChosen;
-			if( i == 1)
+                        var notChosen2;
+                        
+			if( i === 1)
 			{
 				chosen = document.getElementById('stats');
-				notChosen = document.getElementById('menu');
+				notChosen = document.getElementById('help');
+                                notChosen2 = document.getElementById('menu');
 			}
+                        else if( i === 2 )
+                        {
+                            chosen = document.getElementById('menu');
+                            notChosen = document.getElementById('stats');
+                            notChosen2 = document.getElementById('help');
+                        }
 			else
 			{
-				chosen = document.getElementById('menu');
+				chosen = document.getElementById('help');
 				notChosen = document.getElementById('stats');
+                                notChosen2 = document.getElementById('menu');
 			}
 			chosen.style.display="inline";
 			notChosen.style.display="none";
+                        notChosen2.style.display="none";
 		}
 	</script>
 	<hr class="hbar" />
@@ -32,18 +44,7 @@
 <section id="stats">
     <h2 id="statsTitle">Statistics</h2>
 	<table>
-	<!--	<tr>
-			<td>Game started:</td>
-			<td id="statGameStarted">0</td>
-		</tr>
-		<tr>
-			<td>Session started:</td>
-			<td id="statSessionStarted">0</td>
-		</tr> -->
-		<tr>
-			<td>Codelines:</td>
-			<td id="statCodelines">0</td>
-		</tr>
+
 		<tr>
 			<td>Total codelines<br>(this game):</td>
 			<td id="codelinesThisGame">0</td>
@@ -53,7 +54,7 @@
 			<td id="codelinesAllTime">0</td>
 		</tr>
 		<tr>
-			<td>Codelines/second (cps):</td>
+			<td>Codelines/second<br>(cps):</td>
 			<td id="statCPS">0</td>
 		</tr>
 		<tr>
@@ -61,10 +62,21 @@
 			<td id="codeClicks">0</td>
 		</tr>
 		<tr>
-			<td>Keyboard codeline contribution:</td>
+			<td>Keyboard codeline<br>contribution:</td>
 			<td id="HMC">0</td>
 		</tr>
 	</table>
 	<hr class="hbar" />
+        
+        
+        <h2>Achievements</h2>
+
+        <div class="achievement" id="achievement">
+
+        </div>
+
+        <script src="achievement.js" type="text/javascript">
+        </script>
+        
 </section>
 

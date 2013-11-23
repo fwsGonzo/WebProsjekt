@@ -2,20 +2,12 @@
 /*Below is the middlesection*/
 #middleSection
 {
-    min-width: 360px;
+	font-family: verdana;
+    min-width: 200px;
     width: 30%;
     z-index: 1;
     color: white;
-    border-left: 15px solid black;
-    border-right: 15px solid black;
-    /*background: url('/img/background.png') repeat;*/
-    background-color: black;
-    font-family: verdana;
-    
-    /* border image for all browsers except IE 
-    border-image: url(../img/border.png) 30 30 round;
-    -webkit-border-image: url(../img/border.png) 30 30 round;
-    -o-border-image: url(../img/border.png) 30 30 round; */ 
+
 }
 
 .tab
@@ -25,11 +17,12 @@
     text-align: center;
 }
 
-.tab p
+.statsTab   /* .tab p */
 {
     display: inline-block;
     position: relative;
-    padding: 0px 50px;
+    padding: 0px 1em;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
     
     background-color: #001700;
     font-size: 24px;
@@ -50,7 +43,6 @@
 .menuButton
 {
     border: 1px groove lightgray;
-    font-family: verdana;
     font-size: 16px;
 }
 
@@ -80,6 +72,12 @@ td
     padding-bottom: 1em;
 }
 
+#help
+{
+    display: none;
+}
+
+
 /* achievements */ 
 /*#achievement*/
 #achievement
@@ -99,7 +97,6 @@ td
 {
 	opacity: 0.2;
 }
-
 
 /*End of middlesection*/
 

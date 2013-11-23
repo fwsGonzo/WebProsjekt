@@ -143,6 +143,7 @@ function Upgrade(name, desc, cost, building, req, cps_function)
 			self.buy();
 		});
 		
+		$(this.getElement()).wrap('<a href="javascript:;">');
 	}
         
 	// events for hovering selection

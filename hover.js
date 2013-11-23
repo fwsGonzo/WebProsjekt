@@ -18,6 +18,7 @@ function hover(element, title, text, info)
 			top:  event.pageY + 1,
 			height: 'auto'
 			
+			
 		}).stop().toggle(100);
 	},
 	function(event) // hide

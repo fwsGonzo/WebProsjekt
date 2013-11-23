@@ -2,9 +2,10 @@
 /*Below is the rightsection*/
 #rightSection
 {
-    min-width: 350px;
+    min-width: 100px;
     z-index: 2;
-    width: 35%;
+    width: 38%;
+	padding-bottom:12em;
     
 }
 
@@ -21,51 +22,54 @@
     height: 5.0em ;
     background: url(../img/button.png) no-repeat;
     background-size: 100% 100%;
+    background-color: #0F0F0F;
+
 }
 
-.buildingDiv:hover
+/* .buildingDiv:hover
 {
     background-color: rgba(190,190,190,0.25);
-}
+} */
 
 .buildingDiv img
 {
-    float: left;
-    padding-top: 2%;
-    padding-left: 2%;
+    display:none;
 }
+
 
 .buildingText
 {
     margin-top: 0.2em;
-    font-size: 1.5em;
-    color: black;
+    font-size: 1.3em;
+    color: white;
+	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
     padding-top: 15px;
-    padding-left: 5px;
+    padding-left: 1em;
     text-align: left;
 }
 
-.buildingCount
+.buildingCost
 {
         margin-bottom: 0.0em;
-	font-size: 2.0em;
-	color: black;
+	font-size: 1.4em;
+	color: #539057;
 	float: right;
+	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 	position: relative;
-	top: -2.0em;
+	top:-3.5em;
 	left: -10px;
 }
 
-.buildingCost
+.buildingCount
 {       
-        width: 50%;
-        margin-bottom: 0.0em;
-        margin-left: 0.0em;
-	font-size: 1.5em;
-	color: #AAA;
-	position: relative;
+	margin-bottom: 0.0em;
+	margin-left: 0.0em;
+	font-size: 1.3em;
+	color: red;
+	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+        position: relative;
         top: -1.1em;
-	left: 120px;
+	left: 1.5em;
 }
 
 /*End of rightsection*/
