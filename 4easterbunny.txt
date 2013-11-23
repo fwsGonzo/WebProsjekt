@@ -1,0 +1,1 @@
+get 1337 cps (code per second), then a leet programmer will program 500 000 codelines.
