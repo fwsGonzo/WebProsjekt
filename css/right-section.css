@@ -20,7 +20,7 @@
 .buildingDiv
 {
     height: 5.0em ;
-    background: url(../img/button.png) no-repeat;
+    background: url(img/button.png) no-repeat;
     background-size: 100% 100%;
     background-color: #0F0F0F;
 
@@ -30,11 +30,6 @@
 {
     background-color: rgba(190,190,190,0.25);
 } */
-
-.buildingDiv img
-{
-    display:none;
-}
 
 
 .buildingText

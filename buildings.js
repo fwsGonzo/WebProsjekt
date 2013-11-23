@@ -232,7 +232,7 @@ function enableBuilding(b, en)
             //active building
 		
                $(b).css('background-image', 'url(img/button.png)');
-	}
+	} 
 	else
 	{
             //non active building

@@ -96,6 +96,7 @@ td
 .achievementPic
 {
 	opacity: 0.2;
+        border: 1px solid darkgray;
 }
 
 /*End of middlesection*/

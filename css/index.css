@@ -13,7 +13,7 @@ h1, h2, h3
 {
     /* Overskrifter */
     font-family: monospace;
-	text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
     color: #55AA55;
     text-align: center;
 }
@@ -38,15 +38,15 @@ p
 #subframe
 {
     /* float:  left; */
-		overflow-y:hidden;
-	overflow-x:hidden;	
+    overflow-y:hidden;
+    overflow-x:hidden;	
     position: relative;
 }
 
 /*This is the footer and header*/
 .inparagraph
 {
-    /* Tekst-formatering osv. */
+    /* Tekst-format. */
     font-family: monospace;
     color: #A3A3F6;
     text-align: center;
@@ -91,6 +91,7 @@ p
 	margin: 0px;
 }
 
+/* link */
 a
 {
     text-decoration:none;
