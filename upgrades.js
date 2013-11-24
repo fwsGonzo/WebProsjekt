@@ -306,6 +306,70 @@ function initUpgrades()
 			return base_cps * 2.0;
 		}
 	));
+            
+        // Less planning (4)
+	upgrades.push(
+	new Upgrade(
+		"Less planning",
+		"Less is more! " +
+		"Adds 1000 cps to Optimize planning.",
+		1000000,
+		4, 1, // requires 25 of building 4 (Optimize planning)
+		
+		// the upgrade function that modifies base cps
+		function(base_cps)
+		{
+			return base_cps + 1000;
+		}
+	));
+        
+        // optimize the optimize planning (4)
+	upgrades.push(
+	new Upgrade(
+		"Optimize the optimize planning",
+		"10 minutes meeting will fix every thing! " +
+		"Further doubles the cps contribution of Optimize planning.",
+		1000000,
+		4, 25, // requires 25 of building 4 (Optimize planning)
+		
+		// the upgrade function that modifies base cps
+		function(base_cps)
+		{
+			return base_cps * 2.0;
+		}
+	));
+        
+        // optimize the optimize planning (5)
+	upgrades.push(
+	new Upgrade(
+		"Optimize the optimize planning",
+		"10 minutes meeting will fix every thing! " +
+		"Adds 50000 cps to the cps contribution of Optimize planning.",
+		500000,
+		7, 1, // requires 1 of building 7 (Reduce redundancies)
+		
+		// the upgrade function that modifies base cps
+		function(base_cps)
+		{
+			return base_cps + 50000;
+		}
+	));
+        
+        // optimize the optimize planning (5)
+	upgrades.push(
+	new Upgrade(
+		"India ftw!",
+		"Outsourceing everything to India! " +
+		"Further doubles the cps contribution of Reduce redundancies.",
+		10000000,
+		7, 25, // requires 25 of building 7 (Reduce redundancies)
+		
+		// the upgrade function that modifies base cps
+		function(base_cps)
+		{
+			return base_cps * 2.0;
+		}
+	));
 	
 	// set initial values for upgrades
 	for (var i = 0; i < upgrades.length; i++)
