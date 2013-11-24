@@ -21,7 +21,7 @@
 	</script>
         <script src="http://fancybox.net/js/fancybox-1.3.4/jquery.fancybox-1.3.4.pack.js"></script>
 	
-	<link rel="shortcut icon" href="/img/favicon.ico" />
+	<link rel="icon" href="/~s181136/ProsjektOppgave/img/favicon.ico" />
 </head>
 
 <body>
