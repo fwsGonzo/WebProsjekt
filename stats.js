@@ -77,6 +77,7 @@ function updateHandClicks()
 function reset()
 {
 	localStorage.clear();
+	window.location.reload();
 }
 
 // soft reset: reset just this game
@@ -85,4 +86,5 @@ function resetThisGame()
 	var a = Number(localStorage.allTime);
 	localStorage.clear();
 	localStorage.allTime = a;
+	window.location.reload()
 }
