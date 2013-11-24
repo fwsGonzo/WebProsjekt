@@ -8,7 +8,7 @@
 	<meta name="author" content="Gruppe 7">
 	
 	<title>
-		Codelines
+		Codelines writer
 	</title>
 	
 	<link rel="stylesheet" title="Black" href="css/index.css" />
