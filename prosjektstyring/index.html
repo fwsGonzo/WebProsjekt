@@ -12,18 +12,35 @@
 	<h1 id="top">Sluttrapport</h1>
     </header>
         
-        <h2 id="Innledning">Innledning
+        <h2 id="Gruppe7">Gruppe 7
+            <a href="#Innledning"><img src="pilNed.png" alt="pil ned" class="ned" title="Neste avsnitt" /></a>
+        </h2>
+        
+        <ul>
+            <li>s181087 - Alf-André Walla</li>
+            <li>s181086 - Svein Gunnar Fagerheim</li>
+            <li>s181136 - Tore Angell Petersen</li>
+            <li>s190066 - Mateusz Zych </li>
+        </ul>
+        
+        <div class="skilleStrek"></div>
+        
+        <h2 id="Innledning">
+            <a href="#Gruppe7"><img src="pilOpp.png" alt="pil opp" class="opp" title="Forrige avsnitt" /></a>
+            Innledning
             <a href="#ValgAvTema"><img src="pilNed.png" alt="pil ned" class="ned" title="Neste avsnitt" /></a>
         </h2>
         
         <p>
-            Denne sluttrapporten omhandler det arbeidet som vi i gruppe 7 har lagt ned i løpet av prosjektperioden.
-            Prosjektet er utført høsten 2013 ved Høyskolen i Oslo og Akershus.
-            Gruppen består av fire personer, <i>Alf-Andre Walla, Mateusz Zych, Svein Gunnar Fagerheim og Tore Angell Petersen</i>.
-            Der samtlige studerer Bachelor i ingeniørfag data.
-            Denne sluttrapporten vil det bli beskrevet: Hva som var våre forventninger.
-            Hvordan vi tok tak i prosjektet. Hvordan vi jobbet med prosjektet. Hva som ble brukt for å oppnå ønsket resultat. 
-            Hva som ble implementert, samt med beskrivelse av sluttproduktet. Til slutt kommer det refleksjoner om prosjektgjennomføringen.
+            Denne sluttrapporten omhandler det arbeidet som vi i gruppe 7 har lagt ned i løpet av prosjektperioden. 
+            Prosjektet er utført høsten 2013 ved Høyskolen i Oslo og Akershus. Gruppen består av fire personer, 
+            <em>Alf-Andre Walla, Mateusz Zych, Svein Gunnar Fagerheim og Tore Angell Petersen.</em>
+            Der samtlige studerer Bachelor i Ingeniørfag, data.<br>
+            I denne sluttrapporten vil det bli beskrevet: Hva som var våre forventninger. 
+            Hvordan vi tok tak i prosjektet. Hvordan vi jobbet med prosjektet. 
+            Hva som ble brukt for å oppnå ønsket resultat. Hva som ble implementert, samt med beskrivelse av sluttproduktet. 
+            Til slutt kommer det refleksjoner om prosjektgjennomføringen.
+
         </p>
         
         <div class="skilleStrek"></div>
@@ -35,11 +52,14 @@
         </h2>
         
         <p>
-            Tema til vårt prosjekt var det ikke veldig mye spekulasjoner om. Det var ganske bestemt på forhånd hva er det vi skulle lage. 
-            En av gruppas medlemmer kom med prosjekt idéen før prosjektet kom i gang. Idéen var å lage noe lignende til «coockie clicker» spillet,
-            bare med egen idé for tema. Alle likte ideen så vi bestemte oss å gå for den.
-            Da prosjektet kom i gang satt vi oss ned for å planlegge prosjektets fremgang. Der ble vi enige om at siden vi går data linje, 
-            så kan vi lage noe data relatert. Da kom idéen fra en av gruppas medlemmer om å lage det spille med tema knyttet mot programmering. 
+            Tema til vårt prosjekt var det ikke veldig mye spekulasjoner om. 
+            Det var ganske bestemt på forhånd hva er det vi skulle lage.
+            En av gruppas medlemmer kom med prosjekt idéen før prosjektet kom i gang.
+            Idéen var å lage noe lignende til «coockie clicker» spillet, bare med egen idé for tema.
+            Alle likte ideen så vi bestemte oss å gå for den.<br>
+            Da prosjektet kom i gang satt vi oss ned for å planlegge prosjektets fremgang. 
+            Der ble vi enige om at siden vi går data linje, så kan vi lage noe data relatert. 
+            Da kom idéen fra en av gruppas medlemmer om å lage det spille med tema knyttet mot programmering. 
             Altså om å få flest mulig kodelinjer. Alle likte idéen og vi begynte å jobbe seg mot denne idéen.
         </p>
         
@@ -52,79 +72,85 @@
         </h2>
         
         <section>
-        <b>
-            <i>
+        <strong>
+            <em>
                 Brukeren skal kunne trykke på en knapp = 1 kodelinje * faktor, dette fører til at en kodelinje-teller økes for hvert klikk. 
                 Dette tallet øker over tid ettersom man oppgraderer og kjøper ting som øker kodelinjer / sekund.
-            </i>
-        </b>
+            </em>
+        </strong>
         <p>
             Ved å klikke på et keyboard som ligger oppå en Matrix bakgrunn kan spilleren øke antall linjer koder som har blitt skrevet. 
-            I begynnelsen av spillet vil det kun være mulig å få en linje med kode for hvert klikk. Etterhvert som man får kjøpt flere bygninger
-            i spillet så vil det så vil antallet kodelinjer generert ved hvert klikk øke. Det er ingen grense på hvor mange kodelinjer som 
-            genereres for hvert klikk så det er fullt mulig å for eksempel generere en million linjer med koder for hver klikk, men det vil ta tid å komme så langt.
+            I begynnelsen av spillet vil det kun være mulig å få en linje med kode for hvert klikk.
+            Etterhvert som man får kjøpt flere bygninger i spillet så vil det så vil antallet kodelinjer generert ved hvert klikk øke.
+            Det er ingen grense på hvor mange kodelinjer som genereres for hvert klikk så det er fullt mulig å for eksempel
+            generere en million linjer med koder for hver klikk, men det vil ta tid å komme så langt.
         </p><br>
         </section>
         
         <section>
-            <b>
-                <i>
+            <strong>
+                <em>
                     Skal kunne bruke antall kodelinjer til å øke automatisk produksjon av kodelinjer.
-                </i>
-            </b>
+                </em>
+            </strong>
             <p>
-                Kodelinjene man genererer kan man bruke til å kjøpe programmerere og andre ting som vil generere kodelinjer automatisk slik at 
-                spilleren ikke trenger å klikke på tastaturet hele tiden. Den koden som blir generert automatisk vil bli brukt til å kjøpe
-                flere ting som vil øke antall linjer per sekund (cps) enda mer.
+                Kodelinjene man genererer kan man bruke til å kjøpe programmerere og andre ting som vil
+                generere kodelinjer automatisk slik at spilleren ikke trenger å klikke på tastaturet hele tiden.
+                Den koden som blir generert automatisk vil bli brukt til å kjøpe flere ting som vil øke 
+                antall linjer per sekund (cps) enda mer.
             </p><br>
         </section>
         
         <section>
-            <b>
-                <i>
+            <strong>
+                <em>
                     Skal kunne se statistikk over hva som er bygd, hvor mange kodelinjer brukeren har “skrevet,” og mange andre ting.
-                </i>
-            </b>
+                </em>
+            </strong>
             <p>
-                Statistikken viser oversikt over dato for når spillet er startet. Hvor mange kodelinjer som er blitt skrevet totalt for alle spill,
-                hvor mange kodelinjer som er blitt skrevet for dette spillet og hvor mange kodelinjer som er tilgjengelig for å kjøpe oppgraderinger med.
-                Statistikken viser også hvor mange kodelinjer man får hvert sekund av oppgraderingene man har kjøpt som kaller cps som står for codelines per second.
-                Det siste som statistikken viser er hvor mange museklikk man har brukt på keyboardet og hvor mange kodelinjer dette har generert.
+                Statistikken viser oversikt over dato for når spillet er startet. 
+                Hvor mange kodelinjer som er blitt skrevet totalt for alle spill, 
+                hvor mange kodelinjer som er blitt skrevet for dette spillet og
+                hvor mange kodelinjer som er tilgjengelig for å kjøpe oppgraderinger med.<br>
+                Statistikken viser også hvor mange kodelinjer man får hvert sekund av oppgraderingene 
+                man har kjøpt som kaller cps som står for codelines per second.<br>
+                Det siste som statistikken viser er hvor mange museklikk man har brukt på keyboardet 
+                og hvor mange kodelinjer dette har generert.
             </p><br>
         </section>
         
         <section>
-            <b>
-                <i>
+            <strong>
+                <em>
                     Skal finnes en meny hvor brukeren kan resete spillet ved å trykke på en knapp
-                </i>
-            </b>
+                </em>
+            </strong>
             <p>
                 Det er blitt implementert to former for reset:<br>
-                <b>Soft reset</b> som sletter det nåværende spillet. Dvs. alt av ‘buildings’, ‘upgrades’, ‘codelines’, ‘clickpower’,
+                <strong>Soft reset</strong> som resetter det nåværende spillet. Dvs. alt av ‘buildings’, ‘upgrades’, ‘codelines’, ‘clickpower’,
                 ‘cps (codelines per secods)’ og ‘codelines (this game)’ blir nullstilt. Slik at det som gjenstår er ‘codelines (all time)’.<br>
-                Mens <b>hard reset</b> sletter spillet pluss absolutt alt statistikk som er generert.
+                Mens <strong>hard reset</strong> resetter all data og statistikk.
             </p><br>
         </section>
         
         <section>
-            <b>
-                <i>
+            <strong>
+                <em>
                     Skal finnes en meny hvor brukeren kan lagre spillet ved å trykke på en knapp
-                </i>
-            </b>
+                </em>
+            </strong>
             <p>
                 Dette har ikke blitt implementert fordi det viste seg at denne knappen er unødvendig. 
-                Siden nettstedet ble programmert slit at spillet blir lagret underveis hele tiden i realtime.
+                Siden nettstedet ble programmert slik at spillet blir lagret underveis hele tiden i realtime.
             </p><br>
         </section>
         
         <section>
-            <b>
-                <i>
+            <strong>
+                <em>
                     Skal kunne finne et easter-egg, forhåpentlig på en slik måte at hvem som helst skal kunne finne det hvis man leter.
-                </i>
-            </b>
+                </em>
+            </strong>
             <p>
                 Vi la til et morsomt easter-egg som passer til vår «nerdete» idé. Altså en gif av selveste Jim Carrey som pøser på tastaturet med ‘codelines’.
                 Så vis du spiller litt og har kommet deg til akkurat 1337 ‘cps’. Så dukker Jim Carrey gif’ en opp og du får 500 000 ‘codelines’ i bonus.
@@ -140,18 +166,22 @@
         </h2>
         
         <p>
-            <b>Uke 44</b><br>
+            <strong>Uke 44</strong><br>
             Lage skjelettet til siden, og samtidig bestemme oss for et endelig design. Planlegging.<br><br>
 
-            <b>Uke 45</b><br>
-            Ferdig med planlegging. Implementasjon av spillet. Fokus på opplevelse og funksjonalitet.<br><br>
+            <strong>Uke 45</strong><br>
+            Ferdig med planlegging. <br>
+            Implementasjon av spillet. <br>
+            Fokus på opplevelse og funksjonalitet.<br><br>
 
-            <b>Uke 46</b><br>
-            Begynne å skrive rapporten, fordele hvem som skal skrive hva.
-            Skal være ferdig med det meste av spillet i løpet av denne uken. Polering av funksjonalitet og brukeropplevelse.<br><br>
+            <strong>Uke 46</strong><br>
+            Begynne å skrive rapporten, fordele hvem som skal skrive hva.<br>
+            Skal være ferdig med det meste av spillet i løpet av denne uken. <br>
+            Polering av funksjonalitet og brukeropplevelse.<br><br>
 
             <b>Uke 47</b><br>
-            Ferdig med spillet og rapporten.
+            Ferdig med spillet.<br>
+            Utarbeidelse av rapporten.
         </p>
   
         <div class="skilleStrek"></div>
@@ -165,12 +195,13 @@
         </h3>
         
         <p>
-            Vi begynte med en planleggingsperiode hvor vi fant ut hva som skulle være med. Deretter begynte vi å jobbe med hver vår del. 
-            Vi hadde ikke en formel gruppeleder som delegerte oppgaver. I stedet har det vært opp til den enkelte å finne ut 
-            hvilket arbeid som gjenstår, og ta tak i dette. Hvis det arbeidet man tok tak i ville ta lang tid så meldte man på Skype 
-            hva man jobbet med slik at det ikke ble dobbeltarbeid. Hvis det var noen som slet med å finne arbeid så fikk dem hjelp til dette.
-            Ettersom alle fikk sin oppgave, så jobbet de med det til de ble ferdig. Alt mellom arbeidet ble lastet opp på Github. 
-            Slik alt alle har tilgang til enhver endring som ble gjort i prosjektet.
+            Vi begynte med en planleggingsperiode hvor vi fant ut hva som skulle være med. 
+            Deretter begynte vi å jobbe med hver vår del. Vi hadde ikke en formel gruppeleder som delegerte oppgaver.
+            I stedet har det vært opp til den enkelte å finne ut hvilket arbeid som gjenstår, og ta tak i dette. 
+            Hvis det arbeidet man tok tak i ville ta lang tid så meldte man på Skype hva man jobbet med slik at det ikke ble dobbeltarbeid.
+            Hvis det var noen som slet med å finne arbeid så fikk dem hjelp til dette.<br>
+            Ettersom alle fikk sin oppgave, så jobbet de med det til de ble ferdig. 
+            Alt mellom arbeidet ble lastet opp på Github. Slik alt alle har tilgang til enhver endring som ble gjort i prosjektet.<br>
             Og hvis noe var uklart teknisk så har internett gitt oss mye på jakt etter informasjon og hjelp. 
             Spesielt gjelder dette når det er ting som vi ikke har kunnet fra før, og som vi har hatt behov for å lære oss.
         </p>
@@ -180,20 +211,51 @@
         <h3 id="Verktøy">
             <a href="#Evaluering"><img src="pilOpp.png" alt="pil opp" class="opp" title="Forrige avsnitt" /></a>
             Verktøy
+            <a href="#Tester"><img src="pilNed.png" alt="pil ned" class="ned" title="Neste avsnitt" /></a>
+        </h3>
+        
+        <p>
+            Hver av oss har brukt det verktøyet de er mest vant til. 
+            Til sammen så har vi brukt Notepad++/gedit/NetBeans til å skrive kode. 
+            Og Git til å holde styr på versjon kontroll av koden. Repoet ligger privat på GitHub,
+            som er tilgjengelig for alle gruppemedlemmer. 
+            Dette har fungert bra for oss, siden alt ble mellomlagret både lokalt og på GitHub (etter commits).
+            Så ingenting av koden gikk tapt noen gang. 
+            Altså disse verktøyene har funket utmerket for oss i dette prosjektet.
+        </p>
+        
+        <div class="skilleStrek"></div>
+        
+         <h3 id="Tester">
+            <a href="#Verktøy"><img src="pilOpp.png" alt="pil opp" class="opp" title="Forrige avsnitt" /></a>
+            Tester
             <a href="#Teknologier"><img src="pilNed.png" alt="pil ned" class="ned" title="Neste avsnitt" /></a>
         </h3>
         
         <p>
-            Hver av oss har brukt det verktøyet de er mest vant til. Til sammen så har vi brukt Notepad++/gedit/NetBeans til å skrive kode.
-            Og Git til å holde styr på versjon kontroll av koden. Der repoet ligger privat på Github, som er tilgjengelig for alle gruppemedlemmer.
-            Disse har funket bra for oss, siden alt ble mellomlagret både lokalt og på Github (etter commits). 
-            Så ingenting av koden gikk tapt noen gang.  Altså disse verktøyene har funket utmerket for oss i detter prosjektet.
+            <strong>Design:</strong><br>
+            Vi har utført noen brukertester på siden vår for å få relevant tilbakemelding om sidens opplevelse.
+            Slik at vi kunne forbedre designet på siden. Detter viste seg å ikke være så lett, 
+            men til slutt etter mange forsøk så fikk vi det til. Mange av testere sa at siden så ikke helt fint ut,
+            men hadde ikke noe særlig spesielt input på hva er det som kan forbedres. 
+            Ikke alle av disse personene var IT relaterte. Problemet gjaldt for det meste høyre delen av siden. 
+            Altså ‘buildings’ - knappene, men også generelt om siden skrift, kontrast, plassering osv. Rent designmessig.<br>
+            Etter flere tester kom vi oss frem til to IT relaterte personer som ga oss gode konstruktive tilbakemeldinger.
+            Dermed så siden mer leselig og mye bedre ut.<br><br>
+            
+            <strong>Kontrast:</strong><br>
+            Ettersom designet ble ferdig programmert så har vi testet det også med “Colour Contrast Analyser”.
+            Der vi for det meste bestod wcag’s trippel-A (AAA).<br><br>
+            
+            <strong>Funksjonalitet:</strong><br>
+            Sidens funksjonalitet ble testet av oss selv. 
+            Hver gang ny funksjonalitet ble lagdt til så har vi sjekket om helheten funker som den skal. 
         </p>
         
         <div class="skilleStrek"></div>
         
         <h3 id="Teknologier">
-            <a href="#Verktøy"><img src="pilOpp.png" alt="pil opp" class="opp" title="Forrige avsnitt" /></a>
+            <a href="#Tester"><img src="pilOpp.png" alt="pil opp" class="opp" title="Forrige avsnitt" /></a>
             Teknologier
             <a href="#HTML5"><img src="pilNed.png" alt="pil ned" class="ned" title="Neste avsnitt" /></a>
         </h3>
@@ -214,7 +276,8 @@
         </h4>
         
         <p>
-            Vi brukte den nyeste standarden av HTML for å lage strukturen til spillet. Der vi brukte div tagger for å holde orden på elementer.
+            Vi brukte den nyeste standarden av HTML for å lage strukturen til spillet. 
+            Der vi brukte div tagger for å holde orden på elementer.
         </p>
         
         <h4 id="CSS">
@@ -225,7 +288,7 @@
         
         <p>
             Nettstedet benytter seg selvfølgelig av CSS, for å gi siden en passende til temaet design. 
-            Vår CSS struktur består av fire CSS-filer (Se lenger ned under ‘Struktur’). 
+            Vår CSS struktur består av fire CSS-filer (Se lenger ned under <a href="#Struktur">‘Struktur’</a>). 
             Dette ble gjort slik for at det skal være mer oversiktlig og for å holde en god struktur på koden. 
             Hver CSS-fil har ansvar for sin den av siden.
         </p>
@@ -315,11 +378,16 @@
             </tr>
             <tr>
                 <td>upgrades.js</td>
-                <td></td>
+                <td>help.php</td>
                 <td></td>
             </tr>
             <tr>
                 <td>easteregg.js </td>
+                <td>footer.php</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>achievements.js </td>
                 <td></td>
                 <td></td>
             </tr>
@@ -335,12 +403,12 @@
         </h3>
         
         <p>
-            Mye tid ble spart ved å bruke JQuery. Den øker livskvaliteten til enhver JS programmerer. ;)
+            Mye tid ble spart ved å bruke JQuery. Den øker livskvaliteten til enhver JS programmerer.<br>
             Fant ut at å bruke kompositt ikoner sparte mye tid etter implementasjonen var gjennomført, 
             for man slapp å lage samme ikonet der det var ‘selected’ og ‘disabled’. 
-            I stedet ble bare selve ramme-bildet laget i normal, selected, disabled versjoner, 
-            og dermed holdt det å lage 1 versjon av alle ikoner.
-            Prøvde å fokusere på klasser og medlemsfunksjoner i enkelte tilfeller i JS-delen. 
+            I stedet ble bare selve ramme-bildet laget i normal, selected, disabled versjoner,
+            og dermed holdt det å lage 1 versjon av alle ikoner.<br>
+            Prøvde å fokusere på klasser og medlemsfunksjoner i enkelte tilfeller i JS-delen.
             Det fungerte fint og fikk koden til å være effektiv og lesbar.
         </p>
         
@@ -353,31 +421,46 @@
         </h3>
         
         <p>
-            Der var noen problemer med å få knapper og slikt til å kunne highlightes med andre bilder via hover, 
-            når man i enkelte tilfeller også skulle disable knappene. Samtidig var noen knapper kompositter der
-            bakgrunnen var selve ikonet, og der var en ramme i en div foran slik at grafikk lett kunne gjenbrukes.
-            Hadde problemer med å få en objekt-instans inn i eventer, men Google forklarte at alle lokale variabler
-            som er definert i samme funksjon som definerer eventen vil være tilgjengelig når eventen avfyres. 
-            Dermed var det bare å skrive var self = this; også var man i mål.
+            Der var noen problemer med å få knapper og slikt til å kunne highlightes med andre bilder via hover,
+            når man i enkelte tilfeller også skulle disable knappene.
+            Samtidig var noen knapper kompositter der bakgrunnen var selve ikonet, 
+            og der var en ramme i en div foran slik at grafikk lett kunne gjenbrukes.<br>
+            Hadde problemer med å få en objekt-instans inn i eventer, 
+            men Google forklarte at alle lokale variabler som er definert i samme funksjon som definerer 
+            eventen vil være tilgjengelig når eventen avfyres. Dermed var det bare å skrive var self = this; også var man i mål.
+        </p>
+        
+        <div class="skilleStrek"></div>
+        <h3 id="Forbedringer">
+            <a href="#Problemer"><img src="pilOpp.png" alt="pil opp" class="opp" title="Forrige avsnitt" /></a>
+            Forbedringer
+            <a href="#Tidsbruk"><img src="pilNed.png" alt="pil ned" class="ned" title="Neste avsnitt" /></a>
+       </h3>
+        
+        <p>
+            Vi har ett par ting vi ikke har fått tid til, og noen ting vi har funnet som ikke helt fungerte.<br>
+            Vårt easter egg har en liten bug i seg der om du finner easter egget og
+            bare refresher siden så kommer easter egget opp vær gang, siden det er en bonus 
+            du får med det easter egget så får du den hver gang du oppdatere siden.
         </p>
         
         <div class="skilleStrek"></div>
         
         <h3 id="Tidsbruk">
-            <a href="#Problemer"><img src="pilOpp.png" alt="pil opp" class="opp" title="Forrige avsnitt" /></a>
+            <a href="#Forbedringer"><img src="pilOpp.png" alt="pil opp" class="opp" title="Forrige avsnitt" /></a>
             Tidsbruk
             <a href="#Refleksjoner"><img src="pilNed.png" alt="pil ned" class="ned" title="Neste avsnitt" /></a>
        </h3>
         
         <p>
             <b>Design</b><br>
-            Siden alle på gruppa er mer kode interessert enn design interessert, 
-            så førte det til at vi måtte bruke en god del til på dette. Design av siden var det vanskelig å bestemme. 
-            Til slutt ble det at vi gikk med programmering design siden prosjektet vårt handlet om dette. 
-            Da ble en av gruppas medlemmer inspirert av “matrix” -filmen han så i barndommen. 
-            Derfor ble det svart-grønn desing, som passet veldig bra til temaet. 
-            Men forstatt, selv om det var bestemt. Så var det vanskelig å få det til å se bra ut. 
-            Spesielt når det gjaldt knappene på siden. Der gikk det meste av design jobb tiden. 
+             Siden alle på gruppa er mer kode interessert enn design interessert, 
+             så førte det til at vi måtte bruke en god del til på dette. Design av siden var det vanskelig å bestemme. 
+             Til slutt ble det at vi gikk med programmering design siden prosjektet vårt handlet om dette.
+             Da ble en av gruppas medlemmer inspirert av “matrix” -filmen han så i barndommen. 
+             Derfor ble det svart-grønn design, som passet veldig bra til temaet. <br>
+             Men fortsatt, selv om det var bestemt, så var det vanskelig å få det til å se bra ut. 
+             Spesielt når det gjaldt knappene på siden. Der gikk det mye tid. 
         </p>
         
         <div class="skilleStrek"></div>
@@ -389,16 +472,17 @@
         </h2>
         
         <p>
-            Møtte ingen utfordringer. Ingen timeplan eller estimater sprakk. Tidslinje evaluering:
+            Møtte ingen utfordringer. Ingen timeplan eller estimater sprakk.<br><br>
+            Tidslinje evaluering:<br>
             Denne tidslinjen har vist seg å fungere veldig bra. Vi hold oss perfekt overens med planen!<br><br>
-            
-            Når vi ser tilbake på valgene vi har gjort i løpet av prosjektet så vi kan med sikkerhet 
-            konkludere at vi har foretatt de riktige valgene ovenfor tema, innhold og funksjoner på nettsiden. 
-            Vi føler vi har klart å leve opp til de forventningene vi satte oss selv da vi startet og føler vi 
-            har vært realistiske ved de målene vi har satt med tanke på hvilket faglig nivå vi har 
-            vært på etter hvert som tiden har gått. Vi er også tilfreds med løsningene vi har foretatt for å fylle 
-            de kravene som er pensum. Ambisjonsnivået vårt lå ikke for lavt for kompleksiteten på nettstedet
-            vårt er over pensums forventninger. Vi siktet veldig høyt og syns vi nådde målet godt ved hard og konsentrert arbeid.  
+            Når vi ser tilbake på valgene vi har gjort i løpet av prosjektet så vi kan med sikkerhet konkludere 
+            at vi har foretatt de riktige valgene ovenfor tema, innhold og funksjoner på nettsiden.
+            Vi føler vi har klart å leve opp til de forventningene vi satte oss selv da vi startet 
+            og føler vi har vært realistiske ved de målene vi har satt med tanke på hvilket faglig 
+            nivå vi har vært på etter hvert som tiden har gått. 
+            Vi er også tilfreds med løsningene vi har foretatt for å fylle de kravene som er pensum.<br><br>
+            Ambisjonsnivået vårt lå ikke for lavt for kompleksiteten på nettstedet vårt er over pensums forventninger. 
+            Vi siktet relativt høyt og syns vi nådde målet godt ved hard og konsentrert arbeid.  
         </p>
         
         <div class="skilleStrek"></div>
@@ -456,6 +540,7 @@
     
     <aside>
         <ul>
+            <li class="hovedListe"><a href="#Gruppe7">Gruppe 7</a></li>
             <li class="hovedListe"><a href="#Innledning">Innledning</a></li>
             <li class="hovedListe"><a href="#ValgAvTema">Valg av tema</a></li>
             <li class="hovedListe"><a href="#UseCase">Use Case</a></li>
@@ -464,6 +549,7 @@
                 <ul>
                     <li><a href="#Metoder">Metoder</a></li>
                     <li><a href="#Verktøy">Verktøy</a></li>
+                    <li><a href="#Tester">Tester</a></li>
                     <li><a href="#Teknologier">Teknologier</a>
                         <ul>
                             <li class="teknologi"><a href="#HTML5">HTML5</a></li>
@@ -476,6 +562,7 @@
                     <li><a href="#Struktur">Struktur</a></li>
                     <li><a href="#HvaFungerte">Hva fungerte</a></li>
                     <li><a href="#Problemer">Problemer</a></li>
+                    <li><a href="#Forbedringer">Forbedringer</a></li>
                     <li><a href="#Tidsbruk">Tidsbruk</a></li>
                 </ul>
             </li>
