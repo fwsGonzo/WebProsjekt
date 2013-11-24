@@ -69,6 +69,11 @@ td
     text-align: center;
 }
 
+#sluttrapportPDF
+{
+	text-align: center;
+}
+
 a:link
 {
     text-decoration:none;
